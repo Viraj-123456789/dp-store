@@ -1,0 +1,763 @@
+{
+ "hero": [
+  {
+   "imgs": [
+    {
+     "src": "files/AVI03830.jpg",
+     "alt": "Gentle, effective care for skin and hair.",
+     "w": 900,
+     "h": 1125
+    },
+    {
+     "src": "files/AVI03871.jpg",
+     "alt": "",
+     "w": 600,
+     "h": 750
+    }
+   ]
+  },
+  {
+   "imgs": [
+    {
+     "src": "files/AVI03894.jpg",
+     "alt": "Clear skin starts with neem and tea tree.",
+     "w": 900,
+     "h": 1125
+    },
+    {
+     "src": "files/AVI04105.jpg",
+     "alt": "",
+     "w": 600,
+     "h": 750
+    }
+   ]
+  },
+  {
+   "imgs": [
+    {
+     "src": "files/WhatsApp_Image_2026-07-12_at_22.16.00.jpg",
+     "alt": "Six pure oils. One beautiful box.",
+     "w": 900,
+     "h": 900
+    },
+    {
+     "src": "files/dp-cat-combos-v4.jpg",
+     "alt": "",
+     "w": 600,
+     "h": 600
+    }
+   ]
+  }
+ ],
+ "value": [
+  {
+   "src": "files/WhatsApp_Image_2026-02-21_at_9.51.59_AM.jpg",
+   "alt": "Pure Actives",
+   "w": 600,
+   "h": 600
+  },
+  {
+   "src": "files/dp-val-natural.jpg",
+   "alt": "Botanical Extracts",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "src": "files/dp-val-fresh.jpg",
+   "alt": "Aroma Oils",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "src": "files/dp-val-pure.jpg",
+   "alt": "Ancient Ayurveda",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "src": "files/dp-val-nochem.jpg",
+   "alt": "No Harsh Chemicals",
+   "w": 600,
+   "h": 800
+  }
+ ],
+ "concern": [
+  {
+   "src": "files/dp-concern-acne-oil.jpg",
+   "alt": "Acne & Oil Control",
+   "w": 600,
+   "h": 600
+  },
+  {
+   "src": "files/dp-concern-glow-pigmentation.jpg",
+   "alt": "Glow & Pigmentation",
+   "w": 600,
+   "h": 600
+  },
+  {
+   "src": "files/dp-concern-dryness-v2.jpg",
+   "alt": "Hydration & Dryness",
+   "w": 600,
+   "h": 600
+  },
+  {
+   "src": "files/dp-concern-hairfall-dandruff.jpg",
+   "alt": "Hair Fall & Dandruff",
+   "w": 600,
+   "h": 600
+  },
+  {
+   "src": "files/dp-concern-relax-spa-v2.jpg",
+   "alt": "Relax & Aromatherapy",
+   "w": 600,
+   "h": 600
+  }
+ ],
+ "ingredients": [
+  {
+   "src": "files/dp-ing-butter-whip.jpg",
+   "alt": "Whipped butters",
+   "w": 520,
+   "h": 520,
+   "cap": "Whipped butters",
+   "href": null
+  },
+  {
+   "src": "files/dp-ing-oil-pour.jpg",
+   "alt": "Cold pressed oils",
+   "w": 520,
+   "h": 520,
+   "cap": "Cold pressed oils",
+   "href": null
+  },
+  {
+   "src": "files/dp-ing-milk-pour.jpg",
+   "alt": "Small fresh batches",
+   "w": 520,
+   "h": 520,
+   "cap": "Small fresh batches",
+   "href": null
+  },
+  {
+   "src": "files/dp-ing-cashew.jpg",
+   "alt": "Nut butters",
+   "w": 520,
+   "h": 520,
+   "cap": "Nut butters",
+   "href": null
+  },
+  {
+   "src": "files/dp-ing-herb-powder.jpg",
+   "alt": "Herb infusions",
+   "w": 520,
+   "h": 520,
+   "cap": "Herb infusions",
+   "href": null
+  },
+  {
+   "src": "files/dp-ing-aloe.jpg",
+   "alt": "Fresh aloe vera",
+   "w": 520,
+   "h": 520,
+   "cap": "Fresh aloe vera",
+   "href": null
+  }
+ ],
+ "cats": [
+  {
+   "src": "files/dp-cat-skincare-model.jpg",
+   "alt": "Skincare",
+   "w": 520,
+   "h": 693,
+   "title": "Skincare",
+   "href": "/collections/skincare"
+  },
+  {
+   "src": "files/dp-cat-haircare-model.jpg",
+   "alt": "Haircare",
+   "w": 520,
+   "h": 693,
+   "title": "Haircare",
+   "href": "/collections/haircare"
+  },
+  {
+   "src": "files/dp-cat-bodycare-model.jpg",
+   "alt": "Body Care",
+   "w": 520,
+   "h": 693,
+   "title": "Body Care",
+   "href": "/collections/body-wash"
+  },
+  {
+   "src": "files/dp-cat-essential-oils-v3.jpg",
+   "alt": "Essential Oils",
+   "w": 520,
+   "h": 520,
+   "title": "Essential Oils",
+   "href": "/collections/essential-oils-for-aromatherapy"
+  },
+  {
+   "src": "files/dp-cat-combos-kit-v5.jpg",
+   "alt": "Combos & Kits",
+   "w": 520,
+   "h": 693,
+   "title": "Combos & Kits",
+   "href": "/collections/combo"
+  }
+ ],
+ "combosRail": [
+  {
+   "src": "files/Body_butter_banner_3719f681-698a-49d8-ab84-2ddddd58f883.png",
+   "alt": "Body Butters",
+   "w": 520,
+   "h": 520,
+   "cap": "Body Butters",
+   "href": "/products/body-butter-combo-set-of-2-moroccan-mirage-citrus-sunrise"
+  },
+  {
+   "src": "files/all_body_wash.jpg",
+   "alt": "Body Wash Kit",
+   "w": 520,
+   "h": 520,
+   "cap": "Body Wash Kit",
+   "href": "/products/luxury-body-wash-combo-set-of-3-lemongrass-basil-saffron-patchouli-sandalwood-cedarwood"
+  },
+  {
+   "src": "files/dp-cat-combos-v4.jpg",
+   "alt": "Essential oils gift set",
+   "w": 520,
+   "h": 520,
+   "cap": "Essential oils gift set",
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser"
+  },
+  {
+   "src": "files/hair_care_combo_2.jpg",
+   "alt": "Hair care combo",
+   "w": 520,
+   "h": 520,
+   "cap": "Hair care combo",
+   "href": "/products/hair-care-combo-herbal-hair-mask-nourishing-gel"
+  },
+  {
+   "src": "files/New_Steam_Distilled_Rose_water_Multani_Mitti_Combo_1.jpg",
+   "alt": "Rose water + Multani mitti",
+   "w": 520,
+   "h": 520,
+   "cap": "Rose water + Multani mitti",
+   "href": "/products/rose-water-multani-mitti-face-pack-combo"
+  },
+  {
+   "src": "files/all_aloevera_gel_combo.png",
+   "alt": "Aloevera Combo",
+   "w": 520,
+   "h": 520,
+   "cap": "Aloevera Combo",
+   "href": "/products/aloe-vera-gel-combo-set-of-3-cucumber-rose-mint-saffron-kumkumadi"
+  }
+ ],
+ "banners": [
+  {
+   "src": "files/dp-banner-hairmask-v3.png",
+   "alt": "Ayurvedic Hair Masks",
+   "w": 784,
+   "h": 992
+  },
+  {
+   "src": "files/combo_aloevera_gel.jpg",
+   "alt": "Aloevera Gels",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "src": "files/10.jpg",
+   "alt": "Aroma Oils",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "src": "files/AVI04117.jpg",
+   "alt": "Shower Gels",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "src": "files/Hair_Nourishing_Gel.png",
+   "alt": "Hair Nourishing Gel",
+   "w": 1248,
+   "h": 832
+  }
+ ],
+ "spot": {
+  "src": "files/01EssentialOilGiftsetMockup_a500cadb-1262-409c-9c6f-4a48a6bb1313.jpg",
+  "alt": "Essential Oils Combo Set for Aromatherapy and Diffuser",
+  "w": 900,
+  "h": 900
+ },
+ "reels": [
+  {
+   "video": "https://cdn.shopify.com/videos/c/vp/24ef1b0331b647b58f7422cee8d59d83/24ef1b0331b647b58f7422cee8d59d83.SD-480p-1.2Mbps-89569090.mp4",
+   "poster": "files/Artboard_2_copy_2.jpg",
+   "href": "/products/cucumber-aloe-vera-gel",
+   "title": "Cucumber Aloe Vera Gel",
+   "price": "₹250.00",
+   "mrp": "₹399.00"
+  },
+  {
+   "video": "https://cdn.shopify.com/videos/c/vp/325709db7a9e40f18f9756c829513ee9/325709db7a9e40f18f9756c829513ee9.SD-480p-1.2Mbps-89569088.mp4",
+   "poster": "files/Hair_Pack.png",
+   "href": "/products/ayurvedic-hair-mask",
+   "title": "Ayurvedic Hair Mask",
+   "price": "₹275.00",
+   "mrp": "₹499.00"
+  },
+  {
+   "video": "https://cdn.shopify.com/videos/c/vp/599551fb1828498aac11c4ad5aba2fa7/599551fb1828498aac11c4ad5aba2fa7.SD-480p-1.2Mbps-89569093.mp4",
+   "poster": "files/Nourishing_Gel_With_Props.jpg",
+   "href": "/products/hair-nourishing-gel-mask-conditioner",
+   "title": "Hair Nourishing Gel — Mask cum Conditioner",
+   "price": "₹250.00",
+   "mrp": "₹499.00"
+  },
+  {
+   "video": "https://cdn.shopify.com/videos/c/vp/7d590c53cae94b7ea48f21b630fed062/7d590c53cae94b7ea48f21b630fed062.SD-480p-1.0Mbps-89569165.mp4",
+   "poster": "files/1_fcc2f581-1bf2-4269-892e-cbb518ac9cdc.jpg",
+   "href": "/products/moroccan-mirage-body-butter",
+   "title": "Moroccan Mirage Body Butter",
+   "price": "₹299.00",
+   "mrp": "₹699.00"
+  },
+  {
+   "video": "https://cdn.shopify.com/videos/c/vp/5eb0c83bb7cb4a5284a347495736681e/5eb0c83bb7cb4a5284a347495736681e.SD-480p-1.0Mbps-89569092.mp4",
+   "poster": "files/New_Steam_Distilled_Rose_water_Multani_Mitti_Combo_1.jpg",
+   "href": "/products/rose-water-multani-mitti-face-pack-combo",
+   "title": "Rose Water & Multani Mitti Face Pack Combo",
+   "price": "₹275.00",
+   "mrp": "₹398.00"
+  },
+  {
+   "video": null,
+   "poster": "files/Artboard_2_copy_2.jpg",
+   "href": "/products/cucumber-aloe-vera-gel",
+   "title": "Cucumber Aloe Vera Gel",
+   "price": "₹250.00",
+   "mrp": "₹399.00"
+  },
+  {
+   "video": null,
+   "poster": "files/Nourishing_Gel_With_Props.jpg",
+   "href": "/products/hair-nourishing-gel-mask-conditioner",
+   "title": "Hair Nourishing Gel — Mask cum Conditioner",
+   "price": "₹250.00",
+   "mrp": "₹499.00"
+  },
+  {
+   "video": null,
+   "poster": "files/face_wash_with_props.png",
+   "href": "/products/neem-tea-tree-face-wash",
+   "title": "Neem & Tea Tree Face Wash",
+   "price": "₹250.00",
+   "mrp": "₹499.00"
+  }
+ ],
+ "reviews": [
+  {
+   "stars": "★★★★★",
+   "text": "“The kumkumadi gel is now a non-negotiable in my routine. Visible glow in two weeks and it doesn't break me out.”",
+   "who": "Priya S.",
+   "meta": "Saffron Kumkumadi Gel, Ahmedabad"
+  },
+  {
+   "stars": "★★★★★",
+   "text": "“Ordered the jojoba oil for makeup removal. It works better than my micellar water.”",
+   "who": "Meera K.",
+   "meta": "Cold Pressed Jojoba Oil, Mumbai"
+  },
+  {
+   "stars": "★★★★",
+   "text": "“Hair mask smells earthy and real, like homemade. My scalp already feels calmer.”",
+   "who": "Ananya R.",
+   "meta": "Ayurvedic Hair Mask, Pune"
+  }
+ ],
+ "blogs": [
+  {
+   "href": "/blogs/blogs/unlock-the-secrets-of-frankincense-discover-its-remarkable-benefits-for-wellness",
+   "src": "articles/out-0_4b6f0b75-56b4-4e23-beb5-486b56c44190.png",
+   "alt": "Unlock the Secrets of Frankincense: Discover Its Remarkable Health Benefits",
+   "w": 720,
+   "h": 411,
+   "cat": "Aroma Oil",
+   "title": "Unlock the Secrets of Frankincense: Discover Its Remarkable Health Benefits",
+   "excerpt": "Frankincense, the ancient resin derived from the Boswellia tree, has long been revered for its captivating ..."
+  },
+  {
+   "href": "/blogs/blogs/revive-your-hair-with-this-nourishing-diy-hair-pack",
+   "src": "articles/out-0_9452b292-1b5f-4788-b816-abcde09df0fb.png",
+   "alt": "Revive Your Hair with This Nourishing DIY Hair Pack",
+   "w": 720,
+   "h": 411,
+   "cat": null,
+   "title": "Revive Your Hair with This Nourishing DIY Hair Pack",
+   "excerpt": "Healthy, vibrant hair is a true reflection of our overall well-being. In today's fast-paced world, where we..."
+  },
+  {
+   "href": "/blogs/blogs/soothe-your-headache-with-the-power-of-peppermint-essential-oil",
+   "src": "articles/out-0.png",
+   "alt": "Soothe Your Headache with the Power of Peppermint Essential Oil",
+   "w": 720,
+   "h": 411,
+   "cat": null,
+   "title": "Soothe Your Headache with the Power of Peppermint Essential Oil",
+   "excerpt": "Dealing with a persistent headache can be a real pain, both literally and figuratively. Whether it's a tens..."
+  }
+ ],
+ "products": {
+  "bestsellers": [
+   {
+    "href": "/products/neem-tea-tree-face-wash",
+    "title": "Neem & Tea Tree Face Wash",
+    "img": "files/face_wash_with_props.png",
+    "alt": "Neem & Tea Tree Face Wash",
+    "isNew": true,
+    "rating": null,
+    "sub": "Face Wash · 120 ml",
+    "now": "₹250.00",
+    "mrp": "₹499.00",
+    "pct": "49% off",
+    "save": null
+   },
+   {
+    "href": "/products/hair-nourishing-gel-mask-conditioner",
+    "title": "Hair Nourishing Gel — Mask cum Conditioner",
+    "img": "files/Nourishing_Gel_With_Props.jpg",
+    "alt": "Hair Nourishing Gel — Mask cum Conditioner",
+    "isNew": true,
+    "rating": null,
+    "sub": "Conditioner · 180 g",
+    "now": "₹250.00",
+    "mrp": "₹499.00",
+    "pct": "49% off",
+    "save": null
+   },
+   {
+    "href": "/products/ayurvedic-hair-mask",
+    "title": "Ayurvedic Hair Mask",
+    "img": "files/Hair_Pack.png",
+    "alt": "Ayurvedic Hair Mask",
+    "isNew": false,
+    "rating": "4.0 (1)",
+    "sub": "Hair Mask · 100 g",
+    "now": "₹275.00",
+    "mrp": "₹499.00",
+    "pct": "44% off",
+    "save": null
+   },
+   {
+    "href": "/products/lemongrass-basil-body-wash",
+    "title": "Lemongrass & Basil Body Wash",
+    "img": "files/1_0de2b355-368e-4276-a6af-802222a61bb9.jpg",
+    "alt": "Lemongrass & Basil Body Wash",
+    "isNew": false,
+    "rating": "5.0 (1)",
+    "sub": "Body Wash · 200 ml",
+    "now": "₹225.00",
+    "mrp": "₹499.00",
+    "pct": "54% off",
+    "save": null
+   },
+   {
+    "href": "/products/rose-mint-aloe-vera-gel",
+    "title": "Rose Mint Aloe Vera Gel",
+    "img": "files/rosemint_aloevera_with_probs.png",
+    "alt": "Rose Mint Aloe Vera Gel",
+    "isNew": true,
+    "rating": "5.0 (1)",
+    "sub": "Moisturizer · 200 g",
+    "now": "₹250.00",
+    "mrp": "₹399.00",
+    "pct": "37% off",
+    "save": null
+   },
+   {
+    "href": "/products/sandalwood-essential-oil",
+    "title": "Sandalwood Essential Oil",
+    "img": "files/1_59a4f5e6-58d1-4c8d-a416-6f1c316bbaad.jpg",
+    "alt": "Sandalwood Essential Oil",
+    "isNew": true,
+    "rating": null,
+    "sub": "Essential Oil · 15 ml",
+    "now": "₹225.00",
+    "mrp": "₹499.00",
+    "pct": "54% off",
+    "save": null
+   },
+   {
+    "href": "/products/multani-mitti-face-pack",
+    "title": "Multani Mitti Face Pack",
+    "img": "files/MultaniMittiStoreListing_1.jpg",
+    "alt": "Multani Mitti Face Pack",
+    "isNew": false,
+    "rating": null,
+    "sub": "· 200 g",
+    "now": "₹150.00",
+    "mrp": "₹399.00",
+    "pct": "62% off",
+    "save": null
+   },
+   {
+    "href": "/products/rose-water-face-mist-toner",
+    "title": "Rose Water Face Mist Toner",
+    "img": "files/Rosewater-Listing_1.jpg",
+    "alt": "Rose Water Face Mist Toner",
+    "isNew": false,
+    "rating": null,
+    "sub": "· 100 ml",
+    "now": "₹150.00",
+    "mrp": "₹299.00",
+    "pct": "49% off",
+    "save": null
+   }
+  ],
+  "haircare_rail": [
+   {
+    "href": "/products/ayurvedic-hair-mask",
+    "title": "Ayurvedic Hair Mask",
+    "img": "files/Hair_Pack.png",
+    "alt": "Ayurvedic Hair Mask",
+    "isNew": false,
+    "rating": "4.0 (1)",
+    "sub": "Hair Mask · 100 g",
+    "now": "₹275.00",
+    "mrp": "₹499.00",
+    "pct": "44% off",
+    "save": null
+   },
+   {
+    "href": "/products/cold-pressed-jojoba-oil",
+    "title": "Cold Pressed Jojoba Oil",
+    "img": "files/1.jpg",
+    "alt": "Cold Pressed Jojoba Oil",
+    "isNew": false,
+    "rating": "5.0 (5)",
+    "sub": "Oil · 100 ml",
+    "now": "₹599.00",
+    "mrp": "₹999.00",
+    "pct": "40% off",
+    "save": null
+   },
+   {
+    "href": "/products/hair-care-combo-herbal-hair-mask-nourishing-gel",
+    "title": "Hair Care Combo – Herbal Hair Mask & Nourishing Gel",
+    "img": "files/hair_care_combo_2_dd55eb93-67a4-478d-8459-ae4faeef48fa.jpg",
+    "alt": "Hair Care Combo – Herbal Hair Mask & Nourishing Gel",
+    "isNew": false,
+    "rating": null,
+    "sub": "Haircare Combo",
+    "now": "₹450.00",
+    "mrp": "₹998.00",
+    "pct": "54% off",
+    "save": null
+   },
+   {
+    "href": "/products/hair-nourishing-gel-mask-conditioner",
+    "title": "Hair Nourishing Gel — Mask cum Conditioner",
+    "img": "files/Nourishing_Gel_With_Props.jpg",
+    "alt": "Hair Nourishing Gel — Mask cum Conditioner",
+    "isNew": true,
+    "rating": null,
+    "sub": "Conditioner · 180 g",
+    "now": "₹250.00",
+    "mrp": "₹499.00",
+    "pct": "49% off",
+    "save": null
+   },
+   {
+    "href": "/products/rosemary-essential-oil",
+    "title": "Rosemary Essential Oil",
+    "img": "files/Rosemary_Listing_Image_0004_Rosemary_Store_Listing_1.jpg",
+    "alt": "Rosemary Essential Oil",
+    "isNew": false,
+    "rating": "5.0 (4)",
+    "sub": "· 15 ml",
+    "now": "₹225.00",
+    "mrp": "₹499.00",
+    "pct": "54% off",
+    "save": null
+   },
+   {
+    "href": "/products/tea-tree-essential-oil",
+    "title": "Tea Tree Essential Oil",
+    "img": "files/TeaTreeListingImage_0004_TeaTreeStoreListing_1.jpg",
+    "alt": "Tea Tree Essential Oil",
+    "isNew": false,
+    "rating": "5.0 (2)",
+    "sub": "· 15 ml",
+    "now": "₹225.00",
+    "mrp": "₹499.00",
+    "pct": "54% off",
+    "save": null
+   }
+  ],
+  "skincare_rail": [
+   {
+    "href": "/products/neem-tea-tree-face-wash",
+    "title": "Neem & Tea Tree Face Wash",
+    "img": "files/face_wash_with_props.png",
+    "alt": "Neem & Tea Tree Face Wash",
+    "isNew": true,
+    "rating": null,
+    "sub": "Face Wash · 120 ml",
+    "now": "₹250.00",
+    "mrp": "₹499.00",
+    "pct": "49% off",
+    "save": null
+   },
+   {
+    "href": "/products/rose-mint-aloe-vera-gel",
+    "title": "Rose Mint Aloe Vera Gel",
+    "img": "files/rosemint_aloevera_with_probs.png",
+    "alt": "Rose Mint Aloe Vera Gel",
+    "isNew": true,
+    "rating": "5.0 (1)",
+    "sub": "Moisturizer · 200 g",
+    "now": "₹250.00",
+    "mrp": "₹399.00",
+    "pct": "37% off",
+    "save": null
+   },
+   {
+    "href": "/products/cucumber-aloe-vera-gel",
+    "title": "Cucumber Aloe Vera Gel",
+    "img": "files/Artboard_2_copy_2.jpg",
+    "alt": "Cucumber Aloe Vera Gel",
+    "isNew": false,
+    "rating": "4.89 (9)",
+    "sub": "· 200 g / 500 g",
+    "now": "₹250.00",
+    "mrp": "₹399.00",
+    "pct": "37% off",
+    "save": null
+   },
+   {
+    "href": "/products/saffron-kumkumadi-aloe-vera-gel",
+    "title": "Saffron Kumkumadi Aloe Vera Gel",
+    "img": "files/Artboard_2_copy_3.jpg",
+    "alt": "Saffron Kumkumadi Aloe Vera Gel",
+    "isNew": true,
+    "rating": null,
+    "sub": "Moisturizer · 200 g",
+    "now": "₹250.00",
+    "mrp": "₹399.00",
+    "pct": "37% off",
+    "save": null
+   },
+   {
+    "href": "/products/rose-water-face-mist-toner",
+    "title": "Rose Water Face Mist Toner",
+    "img": "files/Rosewater-Listing_1.jpg",
+    "alt": "Rose Water Face Mist Toner",
+    "isNew": false,
+    "rating": null,
+    "sub": "· 100 ml",
+    "now": "₹150.00",
+    "mrp": "₹299.00",
+    "pct": "49% off",
+    "save": null
+   },
+   {
+    "href": "/products/multani-mitti-face-pack",
+    "title": "Multani Mitti Face Pack",
+    "img": "files/MultaniMittiStoreListing_1.jpg",
+    "alt": "Multani Mitti Face Pack",
+    "isNew": false,
+    "rating": null,
+    "sub": "· 200 g",
+    "now": "₹150.00",
+    "mrp": "₹399.00",
+    "pct": "62% off",
+    "save": null
+   }
+  ],
+  "combos": [
+   {
+    "href": "/products/rose-water-multani-mitti-face-pack-combo",
+    "title": "Rose Water & Multani Mitti Face Pack Combo",
+    "img": "files/New_Steam_Distilled_Rose_water_Multani_Mitti_Combo_1.jpg",
+    "alt": "Rose Water & Multani Mitti Face Pack Combo",
+    "isNew": false,
+    "rating": null,
+    "sub": "Skincare Combo",
+    "now": "₹275.00",
+    "mrp": "₹398.00",
+    "pct": "30% off",
+    "save": "₹123.00"
+   },
+   {
+    "href": "/products/aloe-vera-gel-combo-set-of-3-cucumber-rose-mint-saffron-kumkumadi",
+    "title": "Aloe Vera Gel Combo (Set of 3) - Cucumber, Rose Mint & Saffron Kumkumadi",
+    "img": "files/all_aloevera_gel_combo_e878fac6-1eb5-4a49-ade5-7155e018c13c.png",
+    "alt": "DPetals Aloe Vera Gel Combo set of 3 jars",
+    "isNew": false,
+    "rating": null,
+    "sub": "Skincare Combo · 3 x 200 g (600 g total)",
+    "now": "₹599.00",
+    "mrp": "₹1,197.00",
+    "pct": "49% off",
+    "save": "₹598.00"
+   },
+   {
+    "href": "/products/hair-care-combo-herbal-hair-mask-nourishing-gel",
+    "title": "Hair Care Combo – Herbal Hair Mask & Nourishing Gel",
+    "img": "files/hair_care_combo_2_dd55eb93-67a4-478d-8459-ae4faeef48fa.jpg",
+    "alt": "Hair Care Combo – Herbal Hair Mask & Nourishing Gel",
+    "isNew": false,
+    "rating": null,
+    "sub": "Haircare Combo",
+    "now": "₹450.00",
+    "mrp": "₹998.00",
+    "pct": "54% off",
+    "save": "₹548.00"
+   },
+   {
+    "href": "/products/body-butter-combo-set-of-2-moroccan-mirage-citrus-sunrise",
+    "title": "Body Butter Combo (Set of 2) - Moroccan Mirage & Citrus Sunrise",
+    "img": "files/Body_butter_banner_3719f681-698a-49d8-ab84-2ddddd58f883.png",
+    "alt": "Body Butter Combo (Set of 2) - Moroccan Mirage & Citrus Sunrise",
+    "isNew": false,
+    "rating": null,
+    "sub": "Body Care Combo · 2 x 180 g (360 g total)",
+    "now": "₹499.00",
+    "mrp": "₹1,398.00",
+    "pct": "64% off",
+    "save": "₹899.00"
+   },
+   {
+    "href": "/products/luxury-body-wash-combo-set-of-3-lemongrass-basil-saffron-patchouli-sandalwood-cedarwood",
+    "title": "Luxury Body Wash Combo (Set of 3) - Lemongrass & Basil, Saffron & Patchouli, Sandalwood & Cedarwood",
+    "img": "files/all_body_wash_c1cb36be-e015-4ae1-9380-77845cd27ba6.jpg",
+    "alt": "DPetals Body Wash Combo set of 3 sulphate-free shower gels",
+    "isNew": false,
+    "rating": null,
+    "sub": "Body Care Combo · 3 x 200 ml (600 ml total)",
+    "now": "₹599.00",
+    "mrp": "₹1,497.00",
+    "pct": "59% off",
+    "save": "₹898.00"
+   }
+  ]
+ },
+ "logoDims": [
+  [
+   1280,
+   624
+  ],
+  [
+   1280,
+   624
+  ],
+  [
+   1280,
+   624
+  ]
+ ]
+}

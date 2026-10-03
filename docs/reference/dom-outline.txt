@@ -1,0 +1,102 @@
+div#shopify-section-template--22132291174540__hero.shopify-section {1425x594}
+  section.hcar {1425x594}
+    span.leafbg {435x490}
+    div.hslide {0x0}
+    div.hslide {0x0}
+    div.hslide.on {1425x594}
+    button.harr.l {38x38}
+    button.harr.r {38x38}
+    div.hdots {60x9}
+
+div#shopify-section-template--22132291174540__trust.shopify-section {1425x278}
+  section.valuecards {1425x278}
+    div.wrap {1240x210}
+  style {0x0}
+
+div#shopify-section-template--22132291174540__concern.shopify-section {1425x477}
+  section#concern.blk {1425x477}
+    div.wrap {1240x377}
+  style {0x0}
+  link {0x0}
+
+div#shopify-section-template--22132291174540__bestsellers.shopify-section {1425x670}
+  section.blk {1425x670}
+    div.wrap {1240x570}
+
+div#shopify-section-template--22132291174540__banner_hair.shopify-section {1425x492}
+  section.bannerfull {1425x492}
+    div.wrap {1240x440}
+  style {0x0}
+
+div#shopify-section-template--22132291174540__haircare_rail.shopify-section {1425x670}
+  section.blk {1425x670}
+    div.wrap {1240x570}
+
+div#shopify-section-template--22132291174540__ingredients_rail.shopify-section {1425x434}
+  section.blk.sqrailsec {1425x434}
+    div.wrap {1240x334}
+  style {0x0}
+
+div#shopify-section-template--22132291174540__banner_glow.shopify-section {1425x499}
+  section.bannerfull {1425x499}
+    div.wrap {1240x447}
+  style {0x0}
+
+div#shopify-section-template--22132291174540__skincare_rail.shopify-section {1425x670}
+  section.blk {1425x670}
+    div.wrap {1240x570}
+
+div#shopify-section-template--22132291174540__categories.shopify-section {1425x446}
+  section.blk {1425x446}
+    div.wrap {1240x346}
+
+div#shopify-section-template--22132291174540__banner_full_FMAqGA.shopify-section {1425x492}
+  section.bannerfull {1425x492}
+    div.wrap {1240x440}
+  style {0x0}
+
+div#shopify-section-template--22132291174540__spotlight.shopify-section {1425x589}
+  section.blk {1425x589}
+    div.wrap {1240x489}
+
+div#shopify-section-template--22132291174540__combos.shopify-section {1425x744}
+  section.blk {1425x744}
+    div.wrap {1240x644}
+
+div#shopify-section-template--22132291174540__combos_rail.shopify-section {1425x395}
+  section.blk.sqrailsec {1425x395}
+    div.wrap {1240x295}
+  style {0x0}
+
+div#shopify-section-template--22132291174540__banner_full_y9c8Fx.shopify-section {1425x492}
+  section.bannerfull {1425x492}
+    div.wrap {1240x440}
+  style {0x0}
+
+div#shopify-section-template--22132291174540__why.shopify-section {1425x540}
+  section#why.blk {1425x540}
+    div.wrap {1240x440}
+
+div#shopify-section-template--22132291174540__videos.shopify-section {1425x671}
+  section.blk {1425x671}
+    div.wrap {1240x571}
+  style {0x0}
+  script {0x0}
+
+div#shopify-section-template--22132291174540__banner_full_b4XULQ.shopify-section {1425x492}
+  section.bannerfull {1425x492}
+    div.wrap {1240x440}
+  style {0x0}
+
+div#shopify-section-template--22132291174540__reviews.shopify-section {1425x359}
+  section.blk {1425x359}
+    div.wrap {1240x259}
+
+div#shopify-section-template--22132291174540__blog.shopify-section {1425x600}
+  section.blk {1425x600}
+    div.wrap {1240x500}
+
+div#shopify-section-template--22132291174540__newsletter.shopify-section {1425x95}
+  section.news.news-bleed {1425x95}
+    div.wrap.newsrow {1240x51}
+

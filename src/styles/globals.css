@@ -1,0 +1,445 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens, extracted from https://dpetals.com/ (see docs/reference/dpetals-home.css).
+ * Components must only use the semantic utilities generated from the @theme block below
+ * (bg-primary, text-foreground, rounded-xl, shadow-elevated, font-heading, ...).
+ */
+
+:root {
+  /* Brand */
+  --background: #faf7f2;
+  --foreground: #002a22;
+  --card: #ffffff;
+  --card-foreground: #002a22;
+  --primary: #006351;
+  --primary-hover: #009076;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e7f6f0;
+  --primary-tint: #eaf4ef;
+  --primary-faint: #f0faf6;
+  --secondary: #f3eee5;
+  --secondary-foreground: #002a22;
+  --accent: #009076;
+  --muted-foreground: #5e6d68;
+  --subtle: #96a19c;
+  --border: #e9e2d6;
+  --star: #e2a93b;
+  --destructive: #c0392b;
+  --warning-soft: #ffefd6;
+  --warning-surface: #fff6e8;
+  --warning: #8a5a00;
+  --spark: #e8b94a;
+  --scrim: #000000;
+  --copy: #33463f;
+  --meter: #e2ece7;
+  --ck-accent: #007e68;
+  --ck-text: #000000;
+  --ck-border: #dedede;
+  --ck-muted: #707070;
+  --ck-muted-soft: rgb(0 0 0 / 0.56);
+  --ck-surface: #f5f5f5;
+  --ck-selected: #f2f8f6;
+  --ck-error: #d91c1c;
+  --ck-button-surface: #f6f6f6;
+  --ck-shop: #5433eb;
+  --meter-edge: #d5e2dc;
+  --meter-dot: #8aa69b;
+  --meter-copy: #333333;
+
+  /* Text and accents used on dark brand surfaces */
+  --inverse: #eaf5f0;
+  --inverse-soft: #cfe9e0;
+  --inverse-muted: #a8c8bd;
+  --inverse-dim: #7fa99b;
+  --mint: #7fd8be;
+
+  /* Surfaces */
+  --brand-gradient: linear-gradient(120deg, #009076 0%, #002a22 100%);
+
+}
+
+/* Colour palettes for the full-width promo banners. */
+[data-banner="sage"] {
+  --banner: #c6dad1;
+  --banner-kicker: #14433a;
+  --banner-heading: #14433a;
+  --banner-accent: #b23a48;
+  --banner-text: #33463f;
+}
+
+[data-banner="meadow"] {
+  --banner: #d0e1bf;
+  --banner-kicker: #2d7442;
+  --banner-heading: #2d7442;
+  --banner-accent: #b23a48;
+  --banner-text: #5c4a33;
+}
+
+[data-banner="sand"] {
+  --banner: #dad6c4;
+  --banner-kicker: #384e48;
+  --banner-heading: #384e48;
+  --banner-accent: #818e1e;
+  --banner-text: #5c4a33;
+}
+
+[data-banner="mist"] {
+  --banner: #c3d7d1;
+  --banner-kicker: #40744c;
+  --banner-heading: #40744c;
+  --banner-accent: #e05b3a;
+  --banner-text: #457156;
+}
+
+[data-banner="peach"] {
+  --banner: #f8e9d0;
+  --banner-kicker: #521e15;
+  --banner-heading: #521e15;
+  --banner-accent: #b23a48;
+  --banner-text: #521e15;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-tint: var(--primary-tint);
+  --color-primary-faint: var(--primary-faint);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-star: var(--star);
+  --color-destructive: var(--destructive);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-surface: var(--warning-surface);
+  --color-warning: var(--warning);
+  --color-spark: var(--spark);
+  --color-scrim: var(--scrim);
+  --color-copy: var(--copy);
+  --color-meter: var(--meter);
+  --color-ck-accent: var(--ck-accent);
+  --color-ck-text: var(--ck-text);
+  --color-ck-border: var(--ck-border);
+  --color-ck-muted: var(--ck-muted);
+  --color-ck-muted-soft: var(--ck-muted-soft);
+  --color-ck-surface: var(--ck-surface);
+  --color-ck-selected: var(--ck-selected);
+  --color-ck-error: var(--ck-error);
+  --color-ck-button-surface: var(--ck-button-surface);
+  --color-ck-shop: var(--ck-shop);
+  --color-meter-edge: var(--meter-edge);
+  --color-meter-dot: var(--meter-dot);
+  --color-meter-copy: var(--meter-copy);
+  --color-inverse: var(--inverse);
+  --color-inverse-soft: var(--inverse-soft);
+  --color-inverse-muted: var(--inverse-muted);
+  --color-inverse-dim: var(--inverse-dim);
+  --color-mint: var(--mint);
+
+  --color-banner: var(--banner);
+  --color-banner-kicker: var(--banner-kicker);
+  --color-banner-heading: var(--banner-heading);
+  --color-banner-accent: var(--banner-accent);
+  --color-banner-text: var(--banner-text);
+
+  --background-image-brand-gradient: var(--brand-gradient);
+
+}
+
+@theme {
+  --font-sans: var(--font-urbanist), sans-serif;
+  --font-heading: var(--font-bricolage), sans-serif;
+  /* Hosted checkout / sign-in screens use the platform system font stack */
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  --radius-xs: 6px;
+  --radius-sm: 12px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 18px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-4xl: 26px;
+  --radius-gallery: 22px;
+  --radius-pill: 999px;
+
+
+  /* The reference inherits the body line-height (1.6) instead of per-size leading */
+  --text-xs--line-height: 1.6;
+  --text-sm--line-height: 1.6;
+  --text-base--line-height: 1.6;
+
+  --text-shadow-label: 0 2px 12px rgb(0 0 0 / 0.35);
+  --text-shadow-caption: 0 1px 10px rgb(0 0 0 / 0.45);
+
+  /* Reference breakpoints: 640 / 760 / 1024 / 1080 */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 760px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1080px;
+  --shadow-card: 0 10px 30px rgb(0 42 34 / 0.08);
+  --shadow-elevated: 0 24px 60px rgb(0 42 34 / 0.16);
+  --shadow-button: 0 6px 18px rgb(0 42 34 / 0.18);
+  --shadow-float: 0 4px 14px rgb(0 42 34 / 0.16);
+  --shadow-drawer: 16px 0 44px rgb(0 42 34 / 0.18);
+  --shadow-drawer-end: -16px 0 44px rgb(0 42 34 / 0.18);
+  --shadow-pill: 0 4px 14px rgb(0 99 81 / 0.22);
+  --shadow-ck-focus: 0 0 0 0.5px var(--ck-accent);
+  --shadow-sticky: 0 -8px 24px rgb(0 42 34 / 0.1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* clip (not hidden) keeps the sticky header working */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 760px) {
+    body {
+      font-size: 16px;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: var(--font-heading);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:disabled {
+    cursor: default;
+  }
+}
+
+/* Horizontal rails: thin themed scrollbar. */
+@utility rail-scrollbar {
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Rich HTML copy (product descriptions, FAQ answers) */
+@layer components {
+  .rich-text h3 {
+    @apply mb-2 mt-[18px] font-heading text-[16px];
+  }
+
+  .rich-text ul {
+    @apply mb-3 list-disc pl-5;
+  }
+
+  .rich-text li {
+    @apply my-1;
+  }
+
+  .rich-text p {
+    @apply mb-3;
+  }
+
+  .rich-text p:last-child {
+    @apply mb-0;
+  }
+}
+
+/* Rewards bar: message fade, newly unlocked milestone pop and the burst around it */
+@keyframes meter-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+}
+
+@keyframes meter-just {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  35% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes meter-burst {
+  0% {
+    opacity: 0;
+    box-shadow:
+      0 0 0 0 var(--primary-hover),
+      0 0 0 0 var(--spark),
+      0 0 0 0 var(--primary),
+      0 0 0 0 var(--spark),
+      0 0 0 0 var(--primary-hover),
+      0 0 0 0 var(--spark),
+      0 0 0 0 var(--primary),
+      0 0 0 0 var(--spark),
+      0 0 0 0 var(--primary-hover),
+      0 0 0 0 var(--spark);
+  }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+    box-shadow:
+      -38px -26px 0 0 var(--primary-hover),
+      -20px -34px 0 0 var(--spark),
+      6px -38px 0 0 var(--primary),
+      28px -30px 0 0 var(--spark),
+      42px -16px 0 0 var(--primary-hover),
+      -44px -6px 0 0 var(--spark),
+      48px 2px 0 0 var(--primary),
+      -30px -20px 0 0 var(--spark),
+      16px -24px 0 0 var(--primary-hover),
+      36px -10px 0 0 var(--spark);
+  }
+  100% {
+    opacity: 0;
+    box-shadow:
+      -44px 34px 0 -2px var(--primary-hover),
+      -24px 44px 0 -2px var(--spark),
+      8px 50px 0 -2px var(--primary),
+      32px 42px 0 -2px var(--spark),
+      50px 28px 0 -2px var(--primary-hover),
+      -52px 38px 0 -2px var(--spark),
+      56px 30px 0 -2px var(--primary),
+      -36px 46px 0 -2px var(--spark),
+      20px 52px 0 -2px var(--primary-hover),
+      42px 40px 0 -2px var(--spark);
+  }
+}
+
+@layer components {
+  .meter-unlocked {
+    animation: meter-fade 0.6s ease both;
+  }
+
+  .meter-dot-just {
+    animation: meter-just 0.8s ease 0.5s 1 both;
+  }
+
+  .meter-dot-just::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    animation: meter-burst 1.6s cubic-bezier(0.15, 0.6, 0.4, 1) 0.5s 1 both;
+    z-index: 2;
+  }
+
+  /* No celebration when the milestone was already reached earlier in this session */
+  [data-still] .meter-dot-just,
+  [data-still] .meter-dot-just::before {
+    animation: none;
+  }
+}
+
+/* Long-form copy for content pages (about, contact, policies) */
+@layer components {
+  .page-prose {
+    @apply max-w-[780px] text-[15px] leading-[1.85] text-copy;
+  }
+
+  .page-prose p {
+    @apply mb-4;
+  }
+
+  .page-prose h2 {
+    font-size: 1.5em;
+  }
+
+  .page-prose h3 {
+    @apply mb-2.5 mt-6 font-heading text-[19px] text-foreground;
+  }
+
+  .page-prose ul,
+  .page-prose ol {
+    @apply mb-4 ml-[22px] list-disc;
+  }
+
+  .page-prose ol {
+    @apply list-decimal;
+  }
+
+  .page-prose a {
+    @apply font-semibold text-primary;
+  }
+
+  .page-prose img {
+    @apply my-3.5 rounded-xl;
+  }
+}

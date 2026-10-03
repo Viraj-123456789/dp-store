@@ -1,0 +1,80 @@
+{
+ "html": "<div id=\"shopify-section-template--22132290879628__main\" class=\"shopify-section\"> <div class=\"wrap\"> <div class=\"colhead\"> <nav class=\"crumbs\" style=\"padding:0 0 10px\" aria-label=\"Breadcrumb\"> <a href=\"/\">Home</a> / Skincare</nav> <h1>Skincare</h1> <p>Glow naturally with DPetals Herbal &amp; Natural Organic skincare. Hydrate, nourish, and refresh with rosewater mist, aloe gel, body washes, body butters, essential oils, and more. Pure &amp; chemical-free beauty!</p> </div> <div class=\"grid c4\" style=\"padding-bottom:34px\"> <article class=\"pcard\"> <a class=\"pimg\" href=\"/products/neem-tea-tree-face-wash\" aria-label=\"Neem &amp; Tea Tree Face Wash\"> <div class=\"flag\"> <span class=\"badge new\">NEW</span> </div> <img src=\"CDN/files/face_wash_with_props.png\" alt=\"Neem &amp; Tea Tree Face Wash\"> <button class=\"qv\" type=\"button\" aria-label=\"Quick View: Neem &amp; Tea Tree Face Wash\">👁 Quick View</button> </a> <div class=\"pbody\"> <h3 class=\"ptitle\"> <a href=\"/products/neem-tea-tree-face-wash\">Neem &amp; Tea Tree Face Wash</a> </h3> <div class=\"psub\">Face Wash · 120 ml</div> <div class=\"price \"> <span class=\"now\">₹250.00</span> <span class=\"mrp\">MRP ₹499.00</span> <span class=\"pct\">49% off</span> </div> <button class=\"addbtn\" type=\"button\">Add to Cart</button> </div> </article> <article class=\"pcard\"> <a class=\"pimg\" href=\"/products/rose-mint-aloe-vera-gel\" aria-label=\"Rose Mint Aloe Vera Gel\"> <div class=\"flag\"> <span class=\"badge new\">NEW</span> </div> <img src=\"CDN/files/rosemint_aloevera_with_probs.png\" alt=\"Rose Mint Aloe Vera Gel\"> <button class=\"qv\" type=\"button\" aria-label=\"Quick View: Rose Mint Aloe Vera Gel\">👁 Quick View</button> </a> <div class=\"pbody\"> <div class=\"stars\"> <span class=\"s\">★★★★★</span> 5.0 (1)</div> <h3 class=\"ptitle\"> <a href=\"/products/rose-mint-aloe-vera-gel\">Rose Mint Aloe Vera Gel</a> </h3> <div class=\"psub\">Moisturizer · 200 g</div> <div class=\"price \"> <span class=\"now\">₹250.00</span> <span class=\"mrp\">MRP ₹399.00</span> <span class=\"pct\">37% off</span> </div> <button class=\"addbtn\" type=\"button\">Add to Cart</button> </div> </article> </div> </div> </div>",
+ "styles": "",
+ "sec": [
+  0,
+  109,
+  1425,
+  1608.1
+ ],
+ "wrap": [
+  93,
+  109,
+  1240,
+  1608.1
+ ],
+ "crumbs": [
+  117,
+  137,
+  1192,
+  29.2
+ ],
+ "h1": [
+  117,
+  166,
+  1192,
+  46
+ ],
+ "p": [
+  117,
+  219,
+  640,
+  67.2
+ ],
+ "grid": [
+  117,
+  294,
+  1192,
+  1422.8
+ ],
+ "firstCard": [
+  117,
+  294,
+  282,
+  456.9
+ ],
+ "secCS": {
+  "paddingTop": "0px",
+  "paddingBottom": "0px"
+ },
+ "crumbsCS": {
+  "fontSize": "12px",
+  "color": "rgb(94, 109, 104)",
+  "padding": "0px 0px 10px",
+  "margin": "0px"
+ },
+ "h1CS": {
+  "fontSize": "40px",
+  "fontWeight": "700",
+  "lineHeight": "46px",
+  "letterSpacing": "-0.4px",
+  "margin": "0px",
+  "color": "rgb(0, 42, 34)"
+ },
+ "pCS": {
+  "fontSize": "14px",
+  "color": "rgb(94, 109, 104)",
+  "marginTop": "7px",
+  "maxWidth": "640px",
+  "lineHeight": "22.4px"
+ },
+ "gridCS": {
+  "display": "grid",
+  "gridTemplateColumns": "281.5px 281.5px 281.5px 281.5px",
+  "columnGap": "22px",
+  "rowGap": "22px",
+  "marginTop": "0px",
+  "paddingTop": "0px"
+ },
+ "fullText": "Glow naturally with DPetals Herbal & Natural Organic skincare. Hydrate, nourish, and refresh with rosewater mist, aloe gel, body washes, body butters, essential oils, and more. Pure & chemical-free beauty!"
+}

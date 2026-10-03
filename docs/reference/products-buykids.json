@@ -1,0 +1,644 @@
+{
+ "neem-tea-tree-face-wash": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "rose-mint-aloe-vera-gel": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "cucumber-aloe-vera-gel": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "saffron-kumkumadi-aloe-vera-gel": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "rose-water-face-mist-toner": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/rose-water-multani-mitti-face-pack-combo",
+   "html": "<span>💡 Save more — get it in the <b>Rose Water &amp; Multani Mitti Face Pack Combo</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "multani-mitti-face-pack": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/rose-water-multani-mitti-face-pack-combo",
+   "html": "<span>💡 Save more — get it in the <b>Rose Water &amp; Multani Mitti Face Pack Combo</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "cold-pressed-jojoba-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "citrus-sunrise-body-butter": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "moroccan-mirage-body-butter": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "ayurvedic-hair-mask": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/hair-care-combo-herbal-hair-mask-nourishing-gel",
+   "html": "<span>💡 Save more — get it in the <b>Hair Care Combo – Herbal Hair Mask &amp; Nourishing Gel</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "hair-care-combo-herbal-hair-mask-nourishing-gel": {
+  "kids": [
+   "div.",
+   "h1.",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "hair-nourishing-gel-mask-conditioner": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/hair-care-combo-herbal-hair-mask-nourishing-gel",
+   "html": "<span>💡 Save more — get it in the <b>Hair Care Combo – Herbal Hair Mask &amp; Nourishing Gel</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "rosemary-essential-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser",
+   "html": "<span>💡 Save more — get it in the <b>Essential Oils Combo Set for Aromatherapy and Diffuser</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "tea-tree-essential-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser",
+   "html": "<span>💡 Save more — get it in the <b>Essential Oils Combo Set for Aromatherapy and Diffuser</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "saffron-patchouli-body-wash": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "lemongrass-basil-body-wash": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "sandalwood-cedarwood-body-wash": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "sandalwood-essential-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser",
+   "html": "<span>💡 Save more — get it in the <b>Essential Oils Combo Set for Aromatherapy and Diffuser</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "peppermint-essential-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser",
+   "html": "<span>💡 Save more — get it in the <b>Essential Oils Combo Set for Aromatherapy and Diffuser</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "frankincense-essential-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser",
+   "html": "<span>💡 Save more — get it in the <b>Essential Oils Combo Set for Aromatherapy and Diffuser</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "lemongrass-essential-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser",
+   "html": "<span>💡 Save more — get it in the <b>Essential Oils Combo Set for Aromatherapy and Diffuser</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "eucalyptus-essential-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser",
+   "html": "<span>💡 Save more — get it in the <b>Essential Oils Combo Set for Aromatherapy and Diffuser</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "lavender-essential-oil": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "a.saveline",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": {
+   "href": "/products/essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser",
+   "html": "<span>💡 Save more — get it in the <b>Essential Oils Combo Set for Aromatherapy and Diffuser</b></span><span>View →</span>",
+   "style": "margin-top:10px"
+  },
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "essential-oils-combo-set-6-x-15ml-rosemary-tea-tree-lavender-peppermint-lemongrass-sandalwood-or-eucalyptus-for-aromatherapy-and-diffuser": {
+  "kids": [
+   "div.",
+   "h1.",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "rose-water-multani-mitti-face-pack-combo": {
+  "kids": [
+   "div.",
+   "h1.",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend",
+   "blog"
+  ]
+ },
+ "aloe-vera-gel-combo-set-of-3-cucumber-rose-mint-saffron-kumkumadi": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend"
+  ]
+ },
+ "body-butter-combo-set-of-2-moroccan-mirage-citrus-sunrise": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend"
+  ]
+ },
+ "luxury-body-wash-combo-set-of-3-lemongrass-basil-saffron-patchouli-sandalwood-cedarwood": {
+  "kids": [
+   "div.",
+   "h1.",
+   "p.subtitle",
+   "div.meta",
+   "div.",
+   "div.offer",
+   "form.shopify-product-form",
+   "div.trustrow",
+   "details.accord",
+   "details.accord"
+  ],
+  "saveline": null,
+  "blocks": [
+   "main",
+   "extras",
+   "recommend"
+  ]
+ }
+}
