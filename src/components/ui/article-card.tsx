@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { textLinkClass } from "@/components/ui/text-link";
 import { cdn } from "@/lib/cdn";
+import { blogArticlePath } from "@/lib/data/blog";
 import { cn } from "@/lib/utils";
 import type { SizedImage } from "@/types/home";
 
@@ -14,10 +15,21 @@ export interface ArticleCardData {
   image: SizedImage;
 }
 
-export function ArticleCard({ post, className }: { post: ArticleCardData; className?: string }) {
+const RAIL_SIZES = "(min-width: 1080px) 388px, (min-width: 760px) 50vw, 78vw";
+
+export function ArticleCard({
+  post,
+  className,
+  sizes = RAIL_SIZES,
+}: {
+  post: ArticleCardData;
+  className?: string;
+  /** Image `sizes` hint; defaults to the home-page rail layout. */
+  sizes?: string;
+}) {
   return (
     <Link
-      href={`/blogs/blogs/${post.handle}`}
+      href={blogArticlePath(post.handle)}
       className={cn(
         "group flex snap-start flex-col overflow-hidden rounded-2xl border border-border bg-card transition duration-[220ms] hover:-translate-y-[3px] hover:shadow-elevated",
         className,
@@ -29,7 +41,7 @@ export function ArticleCard({ post, className }: { post: ArticleCardData; classN
           alt={post.image.alt}
           width={post.image.width}
           height={post.image.height}
-          sizes="(min-width: 1080px) 388px, (min-width: 760px) 50vw, 78vw"
+          sizes={sizes}
           className="size-full object-cover"
         />
       </div>
