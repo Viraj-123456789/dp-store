@@ -6,8 +6,31 @@
  * (bg-primary, text-foreground, rounded-xl, shadow-elevated, font-heading, ...).
  */
 
+/*
+ * ============================================================================
+ * COLOUR THEME - exactly one :root block below must be active.
+ *
+ * Active:   "Emerald Mist", built around the logo green (#007e68): mint-white
+ *           surfaces, sage borders, deep forest ink and a warm amber-copper
+ *           accent (offers, labels) that contrasts with the green.
+ * To switch: comment out the active :root block (wrap it in a block comment) and
+ *           uncomment exactly one of the others. Blocks contain no inner comments,
+ *           so any of them can be wrapped safely.
+ *
+ *   ORIGINAL        the dpetals.com palette (cream + deep teal) - the roll-back
+ *   EMERALD MIST    mint-white + forest ink + amber-copper accent        (active)
+ *   BOTANICAL ROSE  blush surfaces + berry-rose accent; echoes "Petals"
+ *   OCEAN TEAL      cool aqua-blue surfaces, blue-teal gradient + coral accent
+ *   GOLDEN IVORY    warm ivory + parchment + bronze-gold accent; premium
+ *
+ * All options keep the logo green (#007e68) as the primary colour. Shared by
+ * every theme: the ck-* checkout tokens, destructive, scrim and the promo-banner
+ * palettes below.
+ * ============================================================================
+ */
+
+/* ORIGINAL THEME (matches https://dpetals.com/) - uncomment to roll back
 :root {
-  /* Brand */
   --background: #faf7f2;
   --foreground: #002a22;
   --card: #ffffff;
@@ -46,18 +69,209 @@
   --meter-edge: #d5e2dc;
   --meter-dot: #8aa69b;
   --meter-copy: #333333;
-
-  /* Text and accents used on dark brand surfaces */
   --inverse: #eaf5f0;
   --inverse-soft: #cfe9e0;
   --inverse-muted: #a8c8bd;
   --inverse-dim: #7fa99b;
   --mint: #7fd8be;
-
-  /* Surfaces */
   --brand-gradient: linear-gradient(120deg, #009076 0%, #002a22 100%);
-
 }
+*/
+
+/* EMERALD MIST - active theme */
+/* :root {
+  --background: #f4f8f5;
+  --foreground: #0b2e28;
+  --card: #ffffff;
+  --card-foreground: #0b2e28;
+  --primary: #007e68;
+  --primary-hover: #00927a;
+  --primary-foreground: #ffffff;
+  --primary-soft: #ddf2e9;
+  --primary-tint: #e8f4ee;
+  --primary-faint: #f0f9f4;
+  --secondary: #e7f1eb;
+  --secondary-foreground: #0b2e28;
+  --accent: #b4570f;
+  --muted-foreground: #5a6f68;
+  --subtle: #93a69f;
+  --border: #d8e5dd;
+  --star: #f2a81d;
+  --destructive: #c0392b;
+  --warning-soft: #ffefd6;
+  --warning-surface: #fff6e8;
+  --warning: #8a5a00;
+  --spark: #f5be4f;
+  --scrim: #000000;
+  --copy: #2e4a41;
+  --meter: #dcebe3;
+  --ck-accent: #007e68;
+  --ck-text: #000000;
+  --ck-border: #dedede;
+  --ck-muted: #707070;
+  --ck-muted-soft: rgb(0 0 0 / 0.56);
+  --ck-surface: #f5f5f5;
+  --ck-selected: #f2f8f6;
+  --ck-error: #d91c1c;
+  --ck-button-surface: #f6f6f6;
+  --ck-shop: #5433eb;
+  --meter-edge: #ccdfd5;
+  --meter-dot: #84aa99;
+  --meter-copy: #333333;
+  --inverse: #eaf6f1;
+  --inverse-soft: #c9e8db;
+  --inverse-muted: #a2c8b9;
+  --inverse-dim: #7ea896;
+  --mint: #7ee0c3;
+  --brand-gradient: linear-gradient(120deg, #00927a 0%, #00614f 50%, #0b2e28 100%);
+} */
+
+/* BOTANICAL ROSE - uncomment to use */
+/* :root {
+  --background: #fbf6f3;
+  --foreground: #0e2d27;
+  --card: #ffffff;
+  --card-foreground: #0e2d27;
+  --primary: #007e68;
+  --primary-hover: #00927a;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e1f3ec;
+  --primary-tint: #e9f4ee;
+  --primary-faint: #f3faf6;
+  --secondary: #f6e9e4;
+  --secondary-foreground: #0e2d27;
+  --accent: #b03a5c;
+  --muted-foreground: #6a625f;
+  --subtle: #a39a96;
+  --border: #ecdcd6;
+  --star: #f0a52a;
+  --destructive: #c0392b;
+  --warning-soft: #ffefd6;
+  --warning-surface: #fff6e8;
+  --warning: #8a5a00;
+  --spark: #f4b94f;
+  --scrim: #000000;
+  --copy: #3a4540;
+  --meter: #e3ece7;
+  --ck-accent: #007e68;
+  --ck-text: #000000;
+  --ck-border: #dedede;
+  --ck-muted: #707070;
+  --ck-muted-soft: rgb(0 0 0 / 0.56);
+  --ck-surface: #f5f5f5;
+  --ck-selected: #f2f8f6;
+  --ck-error: #d91c1c;
+  --ck-button-surface: #f6f6f6;
+  --ck-shop: #5433eb;
+  --meter-edge: #d3e0d9;
+  --meter-dot: #86a998;
+  --meter-copy: #333333;
+  --inverse: #eaf6f1;
+  --inverse-soft: #cbe8dc;
+  --inverse-muted: #a4c9ba;
+  --inverse-dim: #7fa897;
+  --mint: #7ee0c3;
+  --brand-gradient: linear-gradient(120deg, #00927a 0%, #00614f 50%, #0e2d27 100%);
+} */
+
+
+/* OCEAN TEAL - uncomment to use */
+:root {
+  --background: #edf5f9;
+  --foreground: #0a2a3a;
+  --card: #ffffff;
+  --card-foreground: #0a2a3a;
+  --primary: #007e68;
+  --primary-hover: #00927a;
+  --primary-foreground: #ffffff;
+  --primary-soft: #d9f0ee;
+  --primary-tint: #e1f0f2;
+  --primary-faint: #ecf6f8;
+  --secondary: #dfecf2;
+  --secondary-foreground: #0a2a3a;
+  --accent: #c8472b;
+  --muted-foreground: #52707f;
+  --subtle: #8ca6b3;
+  --border: #cde0ea;
+  --star: #f4a81f;
+  --destructive: #c0392b;
+  --warning-soft: #ffefd6;
+  --warning-surface: #fff6e8;
+  --warning: #8a5a00;
+  --spark: #f6c04f;
+  --scrim: #000000;
+  --copy: #274556;
+  --meter: #d6e8ef;
+  --ck-accent: #007e68;
+  --ck-text: #000000;
+  --ck-border: #dedede;
+  --ck-muted: #707070;
+  --ck-muted-soft: rgb(0 0 0 / 0.56);
+  --ck-surface: #f5f5f5;
+  --ck-selected: #f2f8f6;
+  --ck-error: #d91c1c;
+  --ck-button-surface: #f6f6f6;
+  --ck-shop: #5433eb;
+  --meter-edge: #c2dae5;
+  --meter-dot: #7ea8b5;
+  --meter-copy: #333333;
+  --inverse: #e8f4f7;
+  --inverse-soft: #c5e3e6;
+  --inverse-muted: #9ec6cb;
+  --inverse-dim: #78a5ad;
+  --mint: #6fe0cf;
+  --brand-gradient: linear-gradient(120deg, #00927a 0%, #006b72 50%, #0a2a3a 100%);
+}
+
+
+/* GOLDEN IVORY - uncomment to use */
+/* :root {
+  --background: #fcfaf2;
+  --foreground: #052e27;
+  --card: #ffffff;
+  --card-foreground: #052e27;
+  --primary: #007e68;
+  --primary-hover: #00927a;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e3f3e8;
+  --primary-tint: #edf5ec;
+  --primary-faint: #f5faf1;
+  --secondary: #f4efdd;
+  --secondary-foreground: #052e27;
+  --accent: #9a6b00;
+  --muted-foreground: #66665a;
+  --subtle: #a3a291;
+  --border: #e7dfc3;
+  --star: #e0a122;
+  --destructive: #c0392b;
+  --warning-soft: #ffefd6;
+  --warning-surface: #fff6e8;
+  --warning: #8a5a00;
+  --spark: #f0c04a;
+  --scrim: #000000;
+  --copy: #3d4a3c;
+  --meter: #e9e8d4;
+  --ck-accent: #007e68;
+  --ck-text: #000000;
+  --ck-border: #dedede;
+  --ck-muted: #707070;
+  --ck-muted-soft: rgb(0 0 0 / 0.56);
+  --ck-surface: #f5f5f5;
+  --ck-selected: #f2f8f6;
+  --ck-error: #d91c1c;
+  --ck-button-surface: #f6f6f6;
+  --ck-shop: #5433eb;
+  --meter-edge: #dcd9bc;
+  --meter-dot: #9aa88a;
+  --meter-copy: #333333;
+  --inverse: #f1f6ec;
+  --inverse-soft: #d3e8d8;
+  --inverse-muted: #aacbb7;
+  --inverse-dim: #82a994;
+  --mint: #8be3c0;
+  --brand-gradient: linear-gradient(120deg, #00806b 0%, #00574a 50%, #052e27 100%);
+} */
+
 
 /* Colour palettes for the full-width promo banners. */
 [data-banner="sage"] {

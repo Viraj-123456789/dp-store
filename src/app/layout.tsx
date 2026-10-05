@@ -28,7 +28,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${urbanist.variable}`}>
+    // suppressHydrationWarning: browser extensions inject attributes onto <html> before hydration
+    <html
+      lang="en"
+      className={`${bricolage.variable} ${urbanist.variable}`}
+      suppressHydrationWarning
+    >
       <body className="min-h-screen">
         <CartProvider catalog={getVariantCatalog()}>{children}</CartProvider>
       </body>
