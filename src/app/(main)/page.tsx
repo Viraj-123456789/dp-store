@@ -11,87 +11,72 @@ import { Spotlight } from "@/components/home/spotlight";
 import { SquareRailSection } from "@/components/home/square-rail-section";
 import { ValueCards } from "@/components/home/value-cards";
 import { WhySection } from "@/components/home/why-section";
-import {
-  bestsellers,
-  blogPosts,
-  categories,
-  comboKits,
-  comboProducts,
-  concerns,
-  haircarePicks,
-  heroSlides,
-  ingredients,
-  promoBanners,
-  reels,
-  reviews,
-  skincarePicks,
-  spotlight,
-  valueCards,
-  whyDpetals,
-} from "@/lib/data/home";
+import { fetchHomeContent, fetchSiteContent } from "@/lib/medusa/content";
 
-function Banner({ id }: { id: string }) {
-  const banner = promoBanners.find((item) => item.id === id);
-  return banner ? <PromoBanner {...banner} /> : null;
-}
+export default async function HomePage() {
+  const [home, site] = await Promise.all([fetchHomeContent(), fetchSiteContent()]);
 
-export default function HomePage() {
+  const banner = (id: string) => {
+    const data = home.promoBanners.find((item) => item.id === id);
+    return data ? <PromoBanner {...data} /> : null;
+  };
+
   return (
     <>
-      <HeroCarousel slides={heroSlides} />
-      <ValueCards cards={valueCards} />
-      <ConcernCards concerns={concerns} />
+      <HeroCarousel slides={home.heroSlides} />
+      <ValueCards cards={home.valueCards} />
+      <ConcernCards concerns={home.concerns} />
       <ProductRailSection
         title="Bestsellers"
         description="The products our customers reorder."
         action={{ label: "View all", href: "/collections/bestsellers" }}
-        products={bestsellers}
+        products={home.bestsellers}
       />
-      <Banner id="hair" />
+      {banner("hair")}
       <ProductRailSection
         title="Haircare picks"
         description="Masks, oils and nourishing gels."
         action={{ label: "View all", href: "/collections/haircare" }}
-        products={haircarePicks}
+        products={home.haircarePicks}
       />
       <SquareRailSection
         title="Made with pure, nourishing butters and oils"
         description="Slow infusions, small batches, real ingredients."
         cardSize={200}
-        items={ingredients.map((image) => ({ image, caption: image.alt }))}
+        items={home.ingredients.map((image) => ({ image, caption: image.alt }))}
       />
-      <Banner id="glow" />
+      {banner("glow")}
       <ProductRailSection
         title="Skincare picks"
         description="Gels, face washes and mists for daily glow."
         action={{ label: "View all", href: "/collections/skincare" }}
-        products={skincarePicks}
+        products={home.skincarePicks}
       />
-      <CategoryGrid categories={categories} />
-      <Banner id="aroma" />
-      <Spotlight {...spotlight} />
+      <CategoryGrid categories={home.categories} />
+      {banner("aroma")}
+      {home.spotlight && <Spotlight {...home.spotlight} />}
       <ProductRailSection
         title="Build your routine and save"
         description="Curated combos with real savings, up to 80% off MRP."
         action={{ label: "View all", href: "/collections/combo" }}
-        products={comboProducts}
+        products={home.comboProducts}
         showSavings
       />
       <SquareRailSection
         title="Combos and kits at a glance"
         cardSize={190}
-        items={comboKits.map((kit) => ({
+        items={home.comboKits.map((kit) => ({
           image: kit.image,
           caption: kit.title,
           href: kit.href,
         }))}
       />
-      <Banner id="shower" />
-      <WhySection {...whyDpetals} />
-      <ReelsSection reels={reels} />
-      <Banner id="hair-gel" />
-      <ReviewsSection reviews={reviews} />
-      <BlogSection posts={blogPosts} />
+      {banner("shower")}
+      <WhySection {...home.whyDpetals} />
+      <ReelsSection reels={home.reels} instagram={site.siteInfo.instagram} />
+      {banner("hair-gel")}
+      <ReviewsSection reviews={home.reviews} />
+      <BlogSection posts={home.blogPosts} />
       <Newsletter />
     </>
   );

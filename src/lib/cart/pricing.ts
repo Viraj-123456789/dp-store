@@ -1,4 +1,4 @@
-import type { CartLine, CartSummary, RewardTier } from "@/types/cart";
+import type { CartLine, CartSummary, CartView, RewardTier } from "@/types/cart";
 
 export const CURRENCY = "INR";
 export const FREE_SHIPPING_THRESHOLD = 500;
@@ -13,7 +13,12 @@ export const REWARD_TIERS: RewardTier[] = [
 
 const MAX_THRESHOLD = REWARD_TIERS[REWARD_TIERS.length - 1].threshold;
 
-export function summarizeCart(lines: CartLine[]): CartSummary {
+/**
+ * The cart summary computed locally. The backend computes the real one; this gives the
+ * cart an instant, optimistic number while a change is on its way. A coupon discount is
+ * carried over from the last server summary (it cannot be known here).
+ */
+export function summarizeCart(lines: CartLine[], couponDiscount = 0): CartSummary {
   let itemCount = 0;
   let listSubtotal = 0;
   let mrpSubtotal = 0;
@@ -31,6 +36,7 @@ export function summarizeCart(lines: CartLine[]): CartSummary {
   );
   const tierDiscount = Math.round(listSubtotal * tierDiscountPercent) / 100;
   const subtotal = listSubtotal - tierDiscount;
+  const coupon = lines.length > 0 ? Math.min(couponDiscount, subtotal) : 0;
 
   return {
     currency: CURRENCY,
@@ -40,9 +46,22 @@ export function summarizeCart(lines: CartLine[]): CartSummary {
     tierDiscountPercent,
     tierDiscount,
     subtotal,
-    savedVsMrp: mrpSubtotal - subtotal,
+    couponDiscount: coupon,
+    savedVsMrp: mrpSubtotal - (subtotal - coupon),
   };
 }
+
+/** What the customer pays for the items: after the reward tier and any coupon. */
+export const payableTotal = (summary: CartSummary) => summary.subtotal - summary.couponDiscount;
+
+/** Shown before anything is in the cart, and while the server cart is loading. */
+export const EMPTY_CART: CartView = {
+  id: "",
+  lines: [],
+  summary: summarizeCart([]),
+  couponCode: "",
+  email: null,
+};
 
 export interface RewardProgress {
   /** 0–100, share of the bar that is filled. */

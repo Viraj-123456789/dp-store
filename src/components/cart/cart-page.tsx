@@ -1,12 +1,14 @@
 "use client";
 
+import type { Coupon } from "@/types/content";
+
 import { CartLineItem } from "./cart-line-item";
 import { useCart } from "./cart-provider";
 import { CartTotals } from "./cart-totals";
 import { CouponBox } from "./coupon-box";
 import { EmptyCart } from "./empty-cart";
 
-export function CartPage() {
+export function CartPage({ coupons }: { coupons: Coupon[] }) {
   const { ready, lines } = useCart();
 
   return (
@@ -22,7 +24,7 @@ export function CartPage() {
             <CartLineItem key={line.variantId} line={line} />
           ))}
           <div className="mt-5 rounded-2xl border border-border bg-card p-5">
-            <CouponBox defaultOpen />
+            <CouponBox coupons={coupons} defaultOpen />
             <CartTotals />
           </div>
         </div>

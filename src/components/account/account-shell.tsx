@@ -5,10 +5,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 import { Button } from "@/components/ui/button";
-import { signOut } from "@/lib/account/storage";
 import { cn } from "@/lib/utils";
 
-import { useHydrated, useSession } from "./hooks";
+import { useAccountActions, useSession } from "./hooks";
 
 const tabs = [
   { href: "/account", label: "Dashboard" },
@@ -20,15 +19,15 @@ const tabs = [
 export function AccountShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
-  const hydrated = useHydrated();
-  const session = useSession();
+  const { session, ready } = useSession();
+  const { signOut } = useAccountActions();
   const signingOut = useRef(false);
 
   useEffect(() => {
-    if (hydrated && !session && !signingOut.current) router.replace("/account/login");
-  }, [hydrated, session, router]);
+    if (ready && !session && !signingOut.current) router.replace("/account/login");
+  }, [ready, session, router]);
 
-  if (!hydrated || !session) return null;
+  if (!ready || !session) return null;
 
   const greeting = session.firstName ? `Hi, ${session.firstName}` : "My account";
 
@@ -37,7 +36,7 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="font-heading text-[2em]">{greeting}</h1>
-          <p className="mt-1.5 text-sm text-muted-foreground">{session.email}</p>
+          <p className="mt-1.5 text-sm text-muted-foreground">{session.email || session.phone}</p>
         </div>
         <Button
           variant="outline"
@@ -45,7 +44,7 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
           onClick={() => {
             signingOut.current = true;
             router.push("/");
-            signOut();
+            signOut.mutate();
           }}
         >
           Sign out

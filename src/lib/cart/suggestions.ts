@@ -1,6 +1,5 @@
-import { collections } from "@/lib/data/collections";
+import { fetchHomeContent } from "@/lib/medusa/content";
 
-import { getDefaultCartLine } from "./catalog";
 import type { CartLineInput } from "./lines";
 
 /**
@@ -11,9 +10,9 @@ import type { CartLineInput } from "./lines";
 const CANDIDATE_COUNT = 9;
 
 /** Server-side: cart lines for the cross-sell suggestions (small, serialisable). */
-export function getCartSuggestions(): CartLineInput[] {
-  return collections.bestsellers.productHandles.slice(0, CANDIDATE_COUNT).flatMap((handle) => {
-    const line = getDefaultCartLine(handle);
-    return line ? [line] : [];
-  });
+export async function getCartSuggestions(): Promise<CartLineInput[]> {
+  const { bestsellers } = await fetchHomeContent();
+  return bestsellers
+    .slice(0, CANDIDATE_COUNT)
+    .flatMap((product) => (product.line ? [product.line] : []));
 }

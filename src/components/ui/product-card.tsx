@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { QuickViewButton } from "@/components/quick-view/quick-view-button";
-import { getDefaultCartLine } from "@/lib/cart/catalog";
 import { cdn } from "@/lib/cdn";
 import { cn, discountPercent, formatMoney } from "@/lib/utils";
 import type { ProductSummary } from "@/types/home";
@@ -31,7 +30,6 @@ export function ProductCard({
     product;
   const href = `/products/${handle}`;
   const pct = discountPercent(price, mrp);
-  const cartLine = getDefaultCartLine(handle);
 
   return (
     <article className="group relative flex snap-start flex-col overflow-hidden rounded-xl border border-border bg-card transition duration-[250ms] hover:-translate-y-1 hover:border-transparent hover:shadow-elevated">
@@ -124,7 +122,7 @@ export function ProductCard({
           </div>
         )}
         <AddToCartButton
-          line={cartLine}
+          line={product.line ?? null}
           className={cn(
             "min-h-[42px] w-full rounded-pill border-[1.5px] border-primary bg-secondary p-2.5 text-[13px] font-bold leading-[normal] text-primary transition duration-[180ms] hover:bg-primary hover:text-primary-foreground",
             compact && "max-md:min-h-8 max-md:p-[7px] max-md:text-[11px]",

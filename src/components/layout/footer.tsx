@@ -1,12 +1,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
-import {
-  footerPolicyLinks,
-  footerShopLinks,
-  popularSearches,
-  siteInfo,
-} from "@/lib/data/navigation";
+import type { Navigation, SiteInfo } from "@/types/content";
 
 import { Logo } from "./logo";
 
@@ -22,7 +17,13 @@ const socialClass =
 const marketplaceClass =
   "inline-flex items-center gap-2 rounded-pill border border-primary-foreground/25 px-4 py-[9px] font-heading text-[13px] font-bold text-primary-foreground transition-colors hover:border-primary-hover hover:bg-primary-hover";
 
-export function Footer() {
+export function Footer({
+  siteInfo,
+  navigation: { footerPolicyLinks, footerShopLinks, popularSearches },
+}: {
+  siteInfo: SiteInfo;
+  navigation: Pick<Navigation, "footerPolicyLinks" | "footerShopLinks" | "popularSearches">;
+}) {
   return (
     <footer className="bg-foreground text-inverse-muted">
       <Container>

@@ -4,13 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
-import { updateProfile } from "@/lib/account/storage";
 import { formatMoney } from "@/lib/utils";
 
 import { AddressSummary } from "./address-card";
 import { AccountCard } from "./account-shell";
 import { FormField } from "./form-field";
-import { useAddresses, useOrders, useSession } from "./hooks";
+import { useAccountActions, useAddresses, useOrders, useSession } from "./hooks";
 
 const helpLinks = [
   { label: "Shipping policy", href: "/policies/shipping-policy" },
@@ -21,9 +20,10 @@ const helpLinks = [
 const cardLinkClass = "font-heading text-[13px] font-bold text-primary hover:text-primary-hover";
 
 function ProfileCard() {
-  const session = useSession();
+  const { session } = useSession();
+  const { updateProfile } = useAccountActions();
   const [editing, setEditing] = useState(false);
-  const [draft, setDraft] = useState({ firstName: "", lastName: "", phone: "" });
+  const [draft, setDraft] = useState({ firstName: "", lastName: "", email: "" });
 
   if (!session) return null;
   const name = `${session.firstName} ${session.lastName}`.trim();
@@ -36,7 +36,8 @@ function ProfileCard() {
           <button
             type="button"
             onClick={() => {
-              setDraft({ firstName: session.firstName, lastName: session.lastName, phone: session.phone });
+              updateProfile.reset();
+              setDraft({ firstName: session.firstName, lastName: session.lastName, email: session.email });
               setEditing(true);
             }}
             className={cardLinkClass}
@@ -50,8 +51,7 @@ function ProfileCard() {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            updateProfile(draft);
-            setEditing(false);
+            updateProfile.mutate(draft, { onSuccess: () => setEditing(false) });
           }}
           className="grid gap-3"
         >
@@ -70,14 +70,19 @@ function ProfileCard() {
             />
           </div>
           <FormField
-            label="Phone"
-            type="tel"
-            value={draft.phone}
-            autoComplete="tel"
-            onValueChange={(phone) => setDraft((d) => ({ ...d, phone }))}
+            label="Email (optional)"
+            type="email"
+            value={draft.email}
+            autoComplete="email"
+            onValueChange={(email) => setDraft((d) => ({ ...d, email }))}
           />
+          {updateProfile.error && (
+            <p role="alert" className="text-[13px] font-semibold text-destructive">
+              {updateProfile.error.message}
+            </p>
+          )}
           <div className="flex gap-2.5">
-            <Button type="submit" size="sm">
+            <Button type="submit" size="sm" disabled={updateProfile.isPending}>
               Save changes
             </Button>
             <Button type="button" variant="outline" size="sm" onClick={() => setEditing(false)}>
@@ -93,11 +98,11 @@ function ProfileCard() {
           </div>
           <div>
             <dt className="text-[12.5px] text-muted-foreground">Email</dt>
-            <dd>{session.email}</dd>
+            <dd>{session.email || "Not added yet"}</dd>
           </div>
           <div>
             <dt className="text-[12.5px] text-muted-foreground">Phone</dt>
-            <dd>{session.phone || "Not added yet"}</dd>
+            <dd>{session.phone}</dd>
           </div>
         </dl>
       )}
@@ -106,8 +111,8 @@ function ProfileCard() {
 }
 
 export function DashboardView() {
-  const orders = useOrders();
-  const addresses = useAddresses();
+  const { orders } = useOrders();
+  const { addresses } = useAddresses();
   const defaultAddress = addresses.find((address) => address.isDefault) ?? addresses[0];
   const latest = orders[0];
 

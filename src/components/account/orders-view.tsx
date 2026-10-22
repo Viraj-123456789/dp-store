@@ -19,7 +19,9 @@ const statusLabel: Record<Order["status"], string> = {
 };
 
 export function OrdersView() {
-  const orders = useOrders();
+  const { orders, ready } = useOrders();
+
+  if (!ready) return null;
 
   if (orders.length === 0) {
     return (

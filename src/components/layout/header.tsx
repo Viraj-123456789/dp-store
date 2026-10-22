@@ -7,12 +7,8 @@ import { useEffect, useState } from "react";
 import { useCart } from "@/components/cart/cart-provider";
 import { useSearch } from "@/components/search/search-provider";
 import { Container } from "@/components/ui/container";
-import {
-  primaryLinks,
-  shopByCategory,
-  shopByConcern,
-} from "@/lib/data/navigation";
 import { cn } from "@/lib/utils";
+import type { Navigation } from "@/types/content";
 
 import { Logo } from "./logo";
 
@@ -53,7 +49,11 @@ function MegaColumn({
   );
 }
 
-export function Header() {
+export function Header({
+  navigation: { primaryLinks, shopByCategory, shopByConcern },
+}: {
+  navigation: Pick<Navigation, "primaryLinks" | "shopByCategory" | "shopByConcern">;
+}) {
   const { summary, openDrawer } = useCart();
   const { openSearch } = useSearch();
   const [mobileOpen, setMobileOpen] = useState(false);

@@ -5,7 +5,7 @@ import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { buttonVariants } from "@/components/ui/button";
 import { Price } from "@/components/ui/price";
 import { Section } from "@/components/ui/section";
-import { getDefaultCartLine } from "@/lib/cart/catalog";
+import type { CartLineInput } from "@/lib/cart/lines";
 import { cdn } from "@/lib/cdn";
 import { formatMoney } from "@/lib/utils";
 import type { SizedImage } from "@/types/home";
@@ -20,6 +20,7 @@ interface SpotlightProps {
   mrp: number;
   currency: string;
   handle: string;
+  line?: CartLineInput;
 }
 
 export function Spotlight({
@@ -31,7 +32,9 @@ export function Spotlight({
   mrp,
   currency,
   handle,
+  line,
 }: SpotlightProps) {
+
   return (
     <Section>
       <div className="grid overflow-hidden rounded-4xl border border-border bg-card shadow-card md:grid-cols-2">
@@ -66,7 +69,7 @@ export function Spotlight({
           </div>
           <div className="mt-1.5 flex flex-wrap gap-3">
             <AddToCartButton
-              line={getDefaultCartLine(handle)}
+              line={line ?? null}
               className={buttonVariants()}
             >
               {`Add to Cart · ${formatMoney(price, currency)}`}

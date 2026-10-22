@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Urbanist } from "next/font/google";
 
 import { CartProvider } from "@/components/cart/cart-provider";
-import { getVariantCatalog } from "@/lib/cart/catalog";
+import { QueryProvider } from "@/components/providers/query-provider";
 import "@/styles/globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -35,7 +35,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-screen">
-        <CartProvider catalog={getVariantCatalog()}>{children}</CartProvider>
+        <QueryProvider>
+          <CartProvider>{children}</CartProvider>
+        </QueryProvider>
       </body>
     </html>
   );

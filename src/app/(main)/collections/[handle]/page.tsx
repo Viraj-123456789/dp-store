@@ -13,8 +13,8 @@ function parsePage(value: string | string[] | undefined) {
   return Number.isNaN(parsed) ? 1 : parsed;
 }
 
-export function generateStaticParams() {
-  return getCollectionHandles().map((handle) => ({ handle }));
+export async function generateStaticParams() {
+  return (await getCollectionHandles()).map((handle) => ({ handle }));
 }
 
 export async function generateMetadata(

@@ -32,11 +32,9 @@ export interface CheckoutErrors {
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const digitsOnly = (value: string) => value.replace(/\D/g, "");
 
+/** An email is required: the order receipt goes to it. The phone number is asked for with the address. */
 export function validateContact(value: string) {
-  const trimmed = value.trim();
-  if (EMAIL_PATTERN.test(trimmed)) return undefined;
-  if (digitsOnly(trimmed).length >= 10 && !/[a-z@]/i.test(trimmed)) return undefined;
-  return "Enter an email or phone number";
+  return EMAIL_PATTERN.test(value.trim()) ? undefined : "Enter an email address";
 }
 
 export function validateAddress(values: AddressValues, options?: { requirePhone?: boolean }): AddressErrors {

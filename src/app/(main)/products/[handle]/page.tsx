@@ -10,7 +10,7 @@ import { RelatedProducts } from "@/components/product/related-products";
 import { StickyAddBar } from "@/components/product/sticky-add-bar";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Container } from "@/components/ui/container";
-import { blogPosts } from "@/lib/data/home";
+import { fetchHomeContent } from "@/lib/medusa/content";
 import {
   getProductDetail,
   getProductHandles,
@@ -18,8 +18,8 @@ import {
 } from "@/lib/products";
 import { NOT_FOUND_METADATA } from "@/lib/seo";
 
-export function generateStaticParams() {
-  return getProductHandles().map((handle) => ({ handle }));
+export async function generateStaticParams() {
+  return (await getProductHandles()).map((handle) => ({ handle }));
 }
 
 export async function generateMetadata(
@@ -40,9 +40,10 @@ export default async function ProductPage(props: PageProps<"/products/[handle]">
   const product = await getProductDetail(handle);
   if (!product) notFound();
 
-  const related = product.related
-    ? await getRelatedProducts(product.related.handles)
-    : [];
+  const [related, { blogPosts }] = await Promise.all([
+    product.related ? getRelatedProducts(product.related.handles) : [],
+    fetchHomeContent(),
+  ]);
 
   return (
     <ProductProvider product={product}>

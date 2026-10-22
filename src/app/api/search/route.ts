@@ -5,9 +5,9 @@ import { searchCatalog } from "@/lib/search";
 const MAX_SUGGESTIONS = 7;
 
 /** Live-search suggestions for the header overlay. */
-export function GET(request: Request) {
+export async function GET(request: Request) {
   const query = new URL(request.url).searchParams.get("q") ?? "";
-  const { products } = searchCatalog(query);
+  const { products } = await searchCatalog(query);
 
   return NextResponse.json({
     total: products.length,

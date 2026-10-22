@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { NewsletterForm } from "@/components/home/newsletter-form";
 import { Container } from "@/components/ui/container";
 
 export function Newsletter() {
@@ -14,21 +14,7 @@ export function Newsletter() {
             offers.
           </p>
         </div>
-        <form className="min-w-[300px] max-w-[560px] flex-1 max-md:max-w-none">
-          <div className="flex gap-2 max-md:flex-col">
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Your email address"
-              aria-label="Email"
-              className="min-w-0 flex-1 rounded-pill bg-card px-5 py-3 font-sans text-[15px] leading-[normal] text-foreground placeholder:text-muted-foreground focus:outline-3 focus:outline-primary-foreground/40"
-            />
-            <Button type="submit" variant="light" className="whitespace-nowrap">
-              Claim 10% off
-            </Button>
-          </div>
-        </form>
+        <NewsletterForm />
       </Container>
     </section>
   );

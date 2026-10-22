@@ -5,12 +5,18 @@ import { Badge } from "@/components/ui/badge";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Container } from "@/components/ui/container";
 import { cdn } from "@/lib/cdn";
-import { BLOG_PATH, getMoreArticles } from "@/lib/data/blog";
+import { BLOG_PATH } from "@/lib/blog";
 import type { BlogArticle } from "@/types/blog";
+import type { ArticleCardData } from "@/types/content";
 
-export function ArticleView({ article }: { article: BlogArticle }) {
-  const more = getMoreArticles(article.handle);
-
+export function ArticleView({
+  article,
+  more,
+}: {
+  article: BlogArticle;
+  /** "Keep reading" picks. */
+  more: ArticleCardData[];
+}) {
   return (
     <Container>
       <Breadcrumb

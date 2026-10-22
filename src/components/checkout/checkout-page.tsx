@@ -6,9 +6,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+import { useAddresses, useSession } from "@/components/account/hooks";
 import { useCart } from "@/components/cart/cart-provider";
-import { addOrder } from "@/lib/account/storage";
-import { placeOrder } from "@/lib/checkout/place-order";
+import { cartApi } from "@/lib/cart/client";
+import { rememberNotice } from "@/lib/checkout/notice";
 import {
   EMPTY_CHECKOUT_VALUES,
   hasErrors,
@@ -17,7 +18,7 @@ import {
   type CheckoutErrors,
   type CheckoutValues,
 } from "@/lib/checkout/validation";
-import { FREE_SHIPPING_THRESHOLD } from "@/lib/cart/pricing";
+import { FREE_SHIPPING_THRESHOLD, payableTotal } from "@/lib/cart/pricing";
 import { cn, formatMoney } from "@/lib/utils";
 
 import { AddressFields } from "./address-fields";
@@ -63,7 +64,7 @@ const paymentOptions = [
 export function CheckoutPage() {
   const router = useRouter();
   const { clearCart } = useCart();
-  const { ready, lines, summary, isBuyNow } = useCheckoutCart();
+  const { ready, lines, summary, isBuyNow, mode, coupon } = useCheckoutCart();
   const [values, setValues] = useState<CheckoutValues>(EMPTY_CHECKOUT_VALUES);
   const [errors, setErrors] = useState<CheckoutErrors>(NO_ERRORS);
   const [summaryOpen, setSummaryOpen] = useState(false);
@@ -72,9 +73,41 @@ export function CheckoutPage() {
   const [notice, setNotice] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
+  // Set once an order is placed or the customer is on their way to the gateway: the cart is
+  // emptied on purpose then, and the empty-cart redirect below must not override that move.
+  const leaving = useRef(false);
+
+  // A signed-in customer starts with their email and default address filled in (once, so
+  // anything they type is never overwritten).
+  const { session } = useSession();
+  const { addresses, ready: addressesReady } = useAddresses();
+  const [prefilled, setPrefilled] = useState(false);
+  const saved = addresses.find((address) => address.isDefault) ?? addresses[0];
+  if (!prefilled && session && addressesReady) {
+    setPrefilled(true);
+    setValues((current) => ({
+      ...current,
+      contact: current.contact || session.email,
+      ...(saved
+        ? {
+            shipping: {
+              firstName: saved.firstName,
+              lastName: saved.lastName,
+              address1: saved.address1,
+              address2: saved.address2,
+              city: saved.city,
+              state: saved.state,
+              pin: saved.pin,
+              phone: saved.phone,
+            },
+          }
+        : {}),
+    }));
+  }
+
   // An empty cart has nothing to check out; the live site sends visitors back to the homepage.
   useEffect(() => {
-    if (ready && lines.length === 0) router.replace("/");
+    if (ready && lines.length === 0 && !leaving.current) router.replace("/");
   }, [ready, lines.length, router]);
 
   if (!ready || lines.length === 0) return null;
@@ -88,7 +121,9 @@ export function CheckoutPage() {
     values.shipping.address1.trim() !== "" &&
     values.shipping.city.trim() !== "" &&
     /^\d{6}$/.test(values.shipping.pin);
-  const freeShipping = summary.subtotal >= FREE_SHIPPING_THRESHOLD;
+  const payable = payableTotal(summary);
+  // Delivery is priced on the list price (before tier and coupon), as the backend does.
+  const freeShipping = summary.listSubtotal >= FREE_SHIPPING_THRESHOLD;
   const shippingText = addressReady
     ? freeShipping
       ? "Free"
@@ -108,17 +143,26 @@ export function CheckoutPage() {
     }
 
     setPaying(true);
-    const result = await placeOrder(values, lines);
-    setPaying(false);
-    if (result.status === "redirect") {
-      window.location.assign(result.url);
-    } else if (result.status === "placed") {
-      addOrder(result.order);
-      router.push(`/order/${result.order.id}/confirmed`);
-      if (!isBuyNow) clearCart();
-    } else {
+    try {
+      const result = await cartApi.checkout(values, mode);
+      rememberNotice(result.status === "unavailable" ? undefined : result.notice);
+      if (result.status === "redirect") {
+        // Leaving for the gateway: keep the button disabled until the page changes.
+        leaving.current = true;
+        window.location.assign(result.url);
+        return;
+      }
+      if (result.status === "placed") {
+        leaving.current = true;
+        router.push(`/order/${result.order.id}/confirmed?t=${encodeURIComponent(result.orderToken)}`);
+        if (!isBuyNow) clearCart();
+        return;
+      }
       setNotice(result.message);
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : "Something went wrong. Please try again.");
     }
+    setPaying(false);
   };
 
   return (
@@ -126,14 +170,14 @@ export function CheckoutPage() {
       <CheckoutHeader />
 
       <SummaryToggleBar
-        total={summary.subtotal}
+        total={payable}
         open={summaryOpen}
         onToggle={() => setSummaryOpen((open) => !open)}
         className="md:hidden"
       />
       {summaryOpen && (
         <div className="border-b border-ck-border bg-ck-surface px-3.5 py-5 md:hidden">
-          <OrderSummary lines={lines} summary={summary} shippingText={shippingText} />
+          <OrderSummary lines={lines} summary={summary} shippingText={shippingText} coupon={coupon} />
         </div>
       )}
 
@@ -152,7 +196,7 @@ export function CheckoutPage() {
               </Link>
             </div>
             <TextField
-              label="Email or mobile phone number"
+              label="Email"
               name="contact"
               autoComplete="email"
               icon="help"
@@ -270,7 +314,7 @@ export function CheckoutPage() {
 
           <div className="mt-6 md:hidden">
             {discountOpen ? (
-              <OrderSummary lines={lines} summary={summary} shippingText={shippingText} />
+              <OrderSummary lines={lines} summary={summary} shippingText={shippingText} coupon={coupon} />
             ) : (
               <>
                 <button
@@ -295,7 +339,7 @@ export function CheckoutPage() {
                     </p>
                   </div>
                   <span className="text-[12px] text-ck-muted-soft">INR</span>
-                  <strong className="text-[20px] font-semibold">{formatMoney(summary.subtotal)}</strong>
+                  <strong className="text-[20px] font-semibold">{formatMoney(payable)}</strong>
                 </div>
               </>
             )}
@@ -319,7 +363,7 @@ export function CheckoutPage() {
         </form>
 
         <aside className="hidden border-l border-ck-border py-10 pl-10 md:block">
-          <OrderSummary lines={lines} summary={summary} shippingText={shippingText} />
+          <OrderSummary lines={lines} summary={summary} shippingText={shippingText} coupon={coupon} />
         </aside>
       </div>
     </div>

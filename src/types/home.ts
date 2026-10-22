@@ -1,3 +1,5 @@
+import type { CartLineInput } from "@/lib/cart/lines";
+
 export interface CdnImage {
   src: string;
   alt: string;
@@ -21,6 +23,8 @@ export interface ProductSummary {
   currency: string;
   isNew: boolean;
   rating: { average: number; count: number } | null;
+  /** The default variant's cart line, so a card can add to the cart without another request. */
+  line?: CartLineInput;
 }
 
 export interface LinkItem {

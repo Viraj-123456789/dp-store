@@ -14,7 +14,7 @@ export async function generateMetadata(props: PageProps<"/search">): Promise<Met
   const query = readQuery((await props.searchParams).q);
   if (!query) return { title: "Search | DPetals" };
 
-  const { products, articles } = searchCatalog(query);
+  const { products, articles } = await searchCatalog(query);
   const total = products.length + articles.length;
   return {
     title: `Search: ${total} ${total === 1 ? "result" : "results"} found for "${query}" | DPetals`,
@@ -24,7 +24,7 @@ export async function generateMetadata(props: PageProps<"/search">): Promise<Met
 
 export default async function SearchPage(props: PageProps<"/search">) {
   const query = readQuery((await props.searchParams).q);
-  const { products, articles } = searchCatalog(query);
+  const { products, articles } = await searchCatalog(query);
   const total = products.length + articles.length;
 
   return (

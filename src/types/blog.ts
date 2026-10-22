@@ -20,3 +20,6 @@ export interface BlogArticle {
   /** Article body as trusted HTML. */
   body: string;
 }
+
+/** An article without its body, as listed on the journal pages. */
+export type ArticleSummary = Omit<BlogArticle, "body">;

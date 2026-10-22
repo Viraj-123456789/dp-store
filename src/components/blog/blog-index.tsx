@@ -2,15 +2,19 @@ import { ArticleGrid } from "@/components/blog/article-grid";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Chip } from "@/components/ui/chip";
 import { Container } from "@/components/ui/container";
-import { BLOG_PATH, blogTagPath, blogTags } from "@/lib/data/blog";
-import type { BlogArticle } from "@/types/blog";
+import { BLOG_PATH, blogTagPath } from "@/lib/blog";
+import type { BlogTag } from "@/types/blog";
+import type { ArticleCardData } from "@/types/content";
 
 /** Blog listing, shared by the full index and the per-tag filter pages. */
 export function BlogIndex({
   articles,
+  tags,
   activeTag,
 }: {
-  articles: BlogArticle[];
+  articles: ArticleCardData[];
+  /** Every tag, for the filter chips. */
+  tags: BlogTag[];
   /** Handle of the selected tag; omit for "All". */
   activeTag?: string;
 }) {
@@ -29,7 +33,7 @@ export function BlogIndex({
         <Chip href={BLOG_PATH} active={!activeTag}>
           All
         </Chip>
-        {blogTags.map((tag) => (
+        {tags.map((tag) => (
           <Chip key={tag.handle} href={blogTagPath(tag.handle)} active={tag.handle === activeTag}>
             {tag.label}
           </Chip>

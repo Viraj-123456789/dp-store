@@ -2,18 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { textLinkClass } from "@/components/ui/text-link";
+import { blogArticlePath } from "@/lib/blog";
 import { cdn } from "@/lib/cdn";
-import { blogArticlePath } from "@/lib/data/blog";
 import { cn } from "@/lib/utils";
-import type { SizedImage } from "@/types/home";
+import type { ArticleCardData } from "@/types/content";
 
-export interface ArticleCardData {
-  handle: string;
-  title: string;
-  excerpt: string;
-  category: string | null;
-  image: SizedImage;
-}
+export type { ArticleCardData };
 
 const RAIL_SIZES = "(min-width: 1080px) 388px, (min-width: 760px) 50vw, 78vw";
 

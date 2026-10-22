@@ -4,9 +4,11 @@ import { CircleHelp } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-import { useCart } from "@/components/cart/cart-provider";
+import { payableTotal } from "@/lib/cart/pricing";
 import { cn, formatMoney } from "@/lib/utils";
 import type { CartLine, CartSummary } from "@/types/cart";
+
+import type { CheckoutCoupon } from "./use-checkout-cart";
 
 function unitPriceLabel(line: CartLine) {
   if (!line.unitMeasure) return null;
@@ -55,14 +57,21 @@ interface OrderSummaryProps {
   lines: CartLine[];
   summary: CartSummary;
   shippingText: string;
+  coupon: CheckoutCoupon;
   className?: string;
   /** Hides the discount input (shown separately on small screens). */
   showDiscountField?: boolean;
 }
 
 /** Line items, discount code input and totals. */
-export function OrderSummary({ lines, summary, shippingText, className, showDiscountField = true }: OrderSummaryProps) {
-  const { couponCode, applyCoupon } = useCart();
+export function OrderSummary({
+  lines,
+  summary,
+  shippingText,
+  coupon,
+  className,
+  showDiscountField = true,
+}: OrderSummaryProps) {
   const [draft, setDraft] = useState("");
 
   return (
@@ -86,7 +95,7 @@ export function OrderSummary({ lines, summary, shippingText, className, showDisc
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            applyCoupon(draft);
+            coupon.apply(draft);
             setDraft("");
           }}
           className="mt-[22px] flex gap-2.5"
@@ -112,9 +121,17 @@ export function OrderSummary({ lines, summary, shippingText, className, showDisc
           </button>
         </form>
       )}
-      {couponCode && (
+      {coupon.error && (
+        <p role="alert" className="mt-2 text-[14px] text-ck-error">
+          {coupon.error}
+        </p>
+      )}
+      {coupon.code && (
         <p className="mt-2 text-[12px] text-ck-muted">
-          {couponCode} will be applied at payment.
+          {coupon.code} applied.{" "}
+          <button type="button" onClick={coupon.clear} className="text-ck-accent underline">
+            Remove
+          </button>
         </p>
       )}
 
@@ -129,6 +146,12 @@ export function OrderSummary({ lines, summary, shippingText, className, showDisc
             <dd>−{formatMoney(summary.tierDiscount)}</dd>
           </div>
         )}
+        {summary.couponDiscount > 0 && (
+          <div className="flex justify-between">
+            <dt>Coupon ({coupon.code})</dt>
+            <dd>−{formatMoney(summary.couponDiscount)}</dd>
+          </div>
+        )}
         <div className="flex justify-between">
           <dt className="flex items-center gap-1.5">
             Shipping
@@ -140,7 +163,7 @@ export function OrderSummary({ lines, summary, shippingText, className, showDisc
           <dt className="text-[18px] font-semibold">Total</dt>
           <dd className="flex items-baseline gap-2">
             <span className="text-[12px] text-ck-muted-soft">INR</span>
-            <strong className="text-[18px] font-semibold">{formatMoney(summary.subtotal)}</strong>
+            <strong className="text-[18px] font-semibold">{formatMoney(payableTotal(summary))}</strong>
           </dd>
         </div>
       </dl>

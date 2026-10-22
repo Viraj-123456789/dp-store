@@ -1,26 +1,29 @@
-import { catalog } from "@/lib/data/collections";
-import { productDetails } from "@/lib/data/product-details";
+import { fetchProductDetail, fetchProductSummaries, listProductHandles } from "@/lib/medusa/products";
 import type { ProductSummary } from "@/types/home";
 import type { ProductDetail } from "@/types/product";
 
-/**
- * Looks up a product's full detail content.
- * Async so the call site stays the same when this is backed by Medusa.
- */
+/** A product's full detail content, or null when it does not exist. */
 export async function getProductDetail(
   handle: string,
 ): Promise<ProductDetail | null> {
-  return productDetails[handle] ?? null;
+  return fetchProductDetail(handle);
 }
 
 export async function getRelatedProducts(
   handles: string[],
 ): Promise<ProductSummary[]> {
-  return handles
-    .map((handle) => catalog[handle])
-    .filter((product): product is ProductSummary => Boolean(product));
+  return fetchProductSummaries(handles);
 }
 
-export function getProductHandles() {
-  return Object.keys(productDetails);
+/**
+ * Handles to prerender at build time. If the backend is unreachable the build still
+ * succeeds and pages render on first request instead.
+ */
+export async function getProductHandles(): Promise<string[]> {
+  try {
+    return await listProductHandles();
+  } catch (error) {
+    console.warn("Could not list product handles for static generation:", error);
+    return [];
+  }
 }

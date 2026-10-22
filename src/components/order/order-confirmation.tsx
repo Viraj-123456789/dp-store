@@ -2,12 +2,12 @@
 
 import { Check } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
-import { useHydrated, useOrders } from "@/components/account/hooks";
 import { CheckoutHeader } from "@/components/checkout/checkout-header";
 import { CheckoutFooterLinks } from "@/components/checkout/footer-links";
 import { SummaryItem, SummaryToggleBar } from "@/components/checkout/order-summary";
+import { forgetNotice, noticeStore } from "@/lib/checkout/notice";
 import { formatMoney } from "@/lib/utils";
 import type { Order, OrderAddress } from "@/types/account";
 
@@ -93,6 +93,13 @@ function OrderTotals({ order }: { order: Order }) {
 
 function ConfirmedOrder({ order }: { order: Order }) {
   const [summaryOpen, setSummaryOpen] = useState(false);
+  // A message checkout left for this page, such as a coupon that could not be kept.
+  const notice = useSyncExternalStore(
+    noticeStore.subscribe,
+    noticeStore.getSnapshot,
+    noticeStore.getServerSnapshot,
+  );
+  useEffect(() => forgetNotice(), []);
   const firstName = order.shippingAddress.firstName.trim();
   const sameBilling =
     JSON.stringify({ ...order.billingAddress, phone: "" }) ===
@@ -132,6 +139,11 @@ function ConfirmedOrder({ order }: { order: Order }) {
               We&apos;ve sent a confirmation to <strong className="font-semibold text-ck-text">{order.email}</strong>.
               You&apos;ll get another email as soon as your order ships.
             </p>
+            {notice && (
+              <p role="status" className="mt-2 leading-[1.5] text-ck-muted">
+                {notice}
+              </p>
+            )}
           </section>
 
           <section className="mt-[22px] rounded-sm border border-ck-border p-[18px]">
@@ -180,7 +192,7 @@ function OrderNotFound() {
     <div className="mx-auto max-w-[540px] px-3.5 py-16 text-center">
       <h1 className="font-system text-[26px] font-semibold leading-[1.2]">We couldn&apos;t find that order</h1>
       <p className="mt-2 leading-[1.5] text-ck-muted">
-        This order isn&apos;t available on this device. The confirmation email we sent has all of its details.
+        This link is incomplete or no longer valid. The confirmation email we sent has all of the order&apos;s details.
       </p>
       <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
         <Link href="/account/orders" className={secondaryButtonClass}>
@@ -195,20 +207,15 @@ function OrderNotFound() {
 }
 
 interface OrderConfirmationProps {
-  orderId: string;
-  /** Sample order supplied by the page in development; bypasses local storage. */
-  previewOrder?: Order;
+  /** The order, or null when the link's id or token did not match one. */
+  order: Order | null;
 }
 
-export function OrderConfirmation({ orderId, previewOrder }: OrderConfirmationProps) {
-  const hydrated = useHydrated();
-  const orders = useOrders();
-  const order = previewOrder ?? orders.find((item) => item.id === orderId);
-
+export function OrderConfirmation({ order }: OrderConfirmationProps) {
   return (
     <div className="min-h-screen bg-card font-system text-[14px] leading-[1.35] text-ck-text">
       <CheckoutHeader />
-      {order ? <ConfirmedOrder order={order} /> : hydrated && <OrderNotFound />}
+      {order ? <ConfirmedOrder order={order} /> : <OrderNotFound />}
     </div>
   );
 }

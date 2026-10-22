@@ -1,6 +1,6 @@
 import { ArticleCard } from "@/components/ui/article-card";
 import { cn } from "@/lib/utils";
-import type { BlogArticle } from "@/types/blog";
+import type { ArticleCardData } from "@/types/content";
 
 const GRID_SIZES = "(min-width: 1080px) 388px, (min-width: 760px) 50vw, 100vw";
 
@@ -9,7 +9,7 @@ export function ArticleGrid({
   articles,
   className,
 }: {
-  articles: BlogArticle[];
+  articles: ArticleCardData[];
   className?: string;
 }) {
   return (

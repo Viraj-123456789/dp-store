@@ -2,16 +2,23 @@
 
 import { useState } from "react";
 
-import { coupons } from "@/lib/data/coupons";
 import { cn } from "@/lib/utils";
+import type { Coupon } from "@/types/content";
 
 import { useCart } from "./cart-provider";
 
 const applyButtonClass =
   "flex-none rounded-sm bg-primary font-heading font-bold text-primary-foreground";
 
-export function CouponBox({ defaultOpen = false }: { defaultOpen?: boolean }) {
-  const { couponCode, applyCoupon, clearCoupon } = useCart();
+export function CouponBox({
+  coupons,
+  defaultOpen = false,
+}: {
+  /** Public offers listed under the code field. */
+  coupons: Coupon[];
+  defaultOpen?: boolean;
+}) {
+  const { couponCode, couponError, applyCoupon, clearCoupon, clearCouponError } = useCart();
   const [draft, setDraft] = useState("");
 
   return (
@@ -32,7 +39,10 @@ export function CouponBox({ defaultOpen = false }: { defaultOpen?: boolean }) {
           <input
             type="text"
             value={draft}
-            onChange={(event) => setDraft(event.target.value)}
+            onChange={(event) => {
+              setDraft(event.target.value);
+              if (couponError) clearCouponError();
+            }}
             placeholder="Enter coupon code"
             autoComplete="off"
             autoCapitalize="characters"
@@ -44,12 +54,13 @@ export function CouponBox({ defaultOpen = false }: { defaultOpen?: boolean }) {
           </button>
         </form>
 
-        <div className="mb-2 min-h-0 text-[12.5px] font-semibold text-primary">
+        <div role={couponError ? "alert" : undefined} className="mb-2 min-h-0 text-[12.5px] font-semibold text-primary">
+          {couponError && <span className="text-destructive">{couponError}</span>}
           {couponCode && (
             <>
               {`✓ `}
               <b>{couponCode}</b>
-              {` will be applied at checkout`}
+              {` applied`}
               <button
                 type="button"
                 onClick={clearCoupon}

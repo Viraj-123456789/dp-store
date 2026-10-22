@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { textLinkClass } from "@/components/ui/text-link";
 import type { CartLineInput } from "@/lib/cart/lines";
 import { cn } from "@/lib/utils";
+import type { Coupon } from "@/types/content";
 
 import { CartLineItem } from "./cart-line-item";
 import { useCart } from "./cart-provider";
@@ -15,7 +16,13 @@ import { CouponBox } from "./coupon-box";
 import { EmptyCart } from "./empty-cart";
 import { RewardsBar } from "./rewards-bar";
 
-export function CartDrawer({ suggestions }: { suggestions: CartLineInput[] }) {
+export function CartDrawer({
+  suggestions,
+  coupons,
+}: {
+  suggestions: CartLineInput[];
+  coupons: Coupon[];
+}) {
   const { lines, summary, drawerOpen, closeDrawer } = useCart();
   const isEmpty = lines.length === 0;
 
@@ -74,7 +81,7 @@ export function CartDrawer({ suggestions }: { suggestions: CartLineInput[] }) {
               <CartSuggestions suggestions={suggestions} />
             </div>
             <div className="border-t border-border bg-card px-5 py-4">
-              <CouponBox />
+              <CouponBox coupons={coupons} />
               <CartTotals compact />
               <Link
                 href="/cart"

@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { removeAddress, saveAddress, setDefaultAddress } from "@/lib/account/storage";
 import { validateAddress, type AddressErrors } from "@/lib/checkout/validation";
 import { INDIAN_STATES } from "@/lib/data/india";
 import type { SavedAddress } from "@/types/account";
@@ -12,7 +11,7 @@ import type { SavedAddress } from "@/types/account";
 import { AddressSummary } from "./address-card";
 import { AccountCard } from "./account-shell";
 import { FormField, FormSelect } from "./form-field";
-import { useAddresses } from "./hooks";
+import { useAccountActions, useAddresses } from "./hooks";
 
 type Draft = Omit<SavedAddress, "id">;
 
@@ -34,10 +33,14 @@ function AddressForm({
   initial,
   onCancel,
   onSave,
+  saving,
+  serverError,
 }: {
   initial: Draft;
   onCancel: () => void;
   onSave: (draft: Draft) => void;
+  saving: boolean;
+  serverError?: string;
 }) {
   const [draft, setDraft] = useState<Draft>(initial);
   const [errors, setErrors] = useState<AddressErrors>({});
@@ -82,8 +85,13 @@ function AddressForm({
         />
         Set as default address
       </label>
+      {serverError && (
+        <p role="alert" className="text-[13px] font-semibold text-destructive">
+          {serverError}
+        </p>
+      )}
       <div className="flex gap-2.5">
-        <Button type="submit" size="sm">
+        <Button type="submit" size="sm" disabled={saving}>
           Save address
         </Button>
         <Button type="button" variant="outline" size="sm" onClick={onCancel}>
@@ -95,10 +103,16 @@ function AddressForm({
 }
 
 export function AddressesView() {
-  const addresses = useAddresses();
+  const { addresses, ready } = useAddresses();
+  const { saveAddress, removeAddress, setDefaultAddress } = useAccountActions();
   const [editing, setEditing] = useState<{ id?: string; draft: Draft } | null>(null);
 
-  const startAdd = () => setEditing({ draft: EMPTY_DRAFT });
+  if (!ready) return null;
+
+  const startAdd = () => {
+    saveAddress.reset();
+    setEditing({ draft: EMPTY_DRAFT });
+  };
   const startEdit = (address: SavedAddress) => {
     const { id, ...draft } = address;
     setEditing({ id, draft });
@@ -124,11 +138,18 @@ export function AddressesView() {
           <AddressForm
             key={editing.id ?? "new"}
             initial={editing.draft}
-            onCancel={() => setEditing(null)}
-            onSave={(draft) => {
-              saveAddress({ ...draft, id: editing.id });
+            onCancel={() => {
+              saveAddress.reset();
               setEditing(null);
             }}
+            saving={saveAddress.isPending}
+            serverError={saveAddress.error?.message}
+            onSave={(address) =>
+              saveAddress.mutate(
+                { id: editing.id, address },
+                { onSuccess: () => setEditing(null) },
+              )
+            }
           />
         </AccountCard>
       )}
@@ -153,14 +174,14 @@ export function AddressesView() {
                   Edit
                 </button>
                 {!address.isDefault && (
-                  <button type="button" className={linkButtonClass} onClick={() => setDefaultAddress(address.id)}>
+                  <button type="button" className={linkButtonClass} onClick={() => setDefaultAddress.mutate(address)}>
                     Set as default
                   </button>
                 )}
                 <button
                   type="button"
                   className="font-heading text-[13px] font-bold text-destructive"
-                  onClick={() => removeAddress(address.id)}
+                  onClick={() => removeAddress.mutate(address.id)}
                 >
                   Delete
                 </button>
