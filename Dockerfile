@@ -11,7 +11,8 @@
 FROM node:22-bookworm-slim AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+# The lockfile is written by npm 11; npm 10 (bundled with the Node image) rejects it as out of sync.
+RUN npm install -g npm@11.6.2 && npm ci
 COPY . .
 ARG NEXT_PUBLIC_MEDUSA_BACKEND_URL
 ARG NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY
